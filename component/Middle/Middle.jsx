@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useState } from "react";
 import { Handshake, Award, Settings, ShieldCheck, ThumbsUp,  ArrowUpRight, } from 'lucide-react';
 
 
@@ -159,6 +160,9 @@ const features = [
 ];
 
 function Middle() {
+
+ const [activeStep, setActiveStep] = useState(null);
+
   const services = [
     {
       icon: "/images/md1.svg",
@@ -626,45 +630,51 @@ the focus of everything.
 
 
                 {/* ONLY THIS AREA HAS GROUP */}
-                <div className="group cursor-pointer">
+               <div
+  className="group cursor-pointer relative"
+  onClick={() =>
+    setActiveStep(activeStep === index ? null : index)
+  }
+>
 
-                  <img
-                    src={item.img}
-                    alt=""  
-                  />
+<img
+  src={item.img}
+  alt=""
+/>
 
 
                   {/* HOVER BOX */}
-                 <div
-  className={`
-    absolute
-    left-10
-    top-0
-    ${item.bgColor}
-    text-white
+                <div
+className={`
+absolute
+left-10
+top-0
+${item.bgColor}
+text-white
 
-    w-80
-    max-w-[calc(100vw-2rem)]
+w-80
+max-w-[calc(100vw-2rem)]
 
-    m-5
-    opacity-0
-    invisible
-    rounded-xl
+rounded-xl
+z-50
 
-    group-hover:opacity-100
-    group-hover:visible
+opacity-0
+invisible
 
-    transition-all
-    duration-300
-    z-50
+group-hover:opacity-100
+group-hover:visible
 
-    sm:left-10
-    sm:top-0
+max-sm:left-[-136px]
+max-sm:-translate-x-1/2
+max-sm:top-12
 
-    max-sm:left-1/2
-    max-sm:-translate-x-1/2
-    max-sm:top-12
-  `}
+max-sm:transition-all
+duration-300
+
+${activeStep === index 
+? "max-sm:opacity-100 max-sm:visible" 
+: ""}
+`}
 >
   <h4 className="text-lg text-center py-2 -pb-2 font-semibold  max-sm:text-base">
     {item.title}

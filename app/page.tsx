@@ -264,8 +264,6 @@ visibility and control.
       {/* Glow */}
       <div className="absolute inset-0 -z-10 " />
     </div>
-
-
     {/* Content */}
     <div className="relative z-10 max-w-3xl">
 

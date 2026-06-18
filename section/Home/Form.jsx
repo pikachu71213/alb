@@ -29,7 +29,7 @@ export default function ContactSection() {
           
          
           <div className="lg:col-span-5 flex flex-col justify-center h-full">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+            <h2 className="text-3xl md:text-[45px] font-semibold tracking-tight mb-6">
               Let's <span className="text-[#ff3b30]">Talk</span>
             </h2>
             <p className="text-[#FFFFFF] text-sm md:text-base leading-relaxed tracking-wide max-w-md mb-10">

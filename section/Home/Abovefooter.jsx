@@ -56,7 +56,7 @@ const certifications = [
     <div>
       <section className="w-full overflow-hidden py-16 bg-black">
 <div className="text-center  mb-10">
-          <h2 className="text-[45px] font-semibold text-white">
+          <h2 className="text-3xl md:text-[45px] font-semibold text-white">
             Our End  <span className="text-red-500">Customers</span>
           </h2>
         </div>
@@ -134,7 +134,7 @@ const certifications = [
 
         {/* HEADING */}
         <div className="text-center mb-14">
-          <h2 className="text-[45px] font-semibold text-white">
+          <h2 className="text-3xl md:text-[45px] font-semibold text-white">
             Certifications &{" "}
             <span className="text-[#FF403A]">Accreditations</span>
           </h2>

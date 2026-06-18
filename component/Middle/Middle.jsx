@@ -526,7 +526,7 @@ the focus of everything.
 
     {/* HEADING */}
     <div className="text-center mb-10">
-      <h2 className="text-[45px] font-semibold text-white">
+      <h2 className="text-3xl md:text-[45px] font-semibold text-white">
         How We <span className="text-red-500">Work</span>
       </h2>
     </div>
@@ -578,7 +578,7 @@ the focus of everything.
                 {/* TEXT */}
                 <div>
 
-                  <h3 className="text-white text-[40px] font-semibold flex items-center gap-2">
+                  <h3 className="text-white text-3xl md:text-[40px] font-semibold flex items-center gap-2">
                     <span className={item.text}>
                       {item.number}
                     </span>

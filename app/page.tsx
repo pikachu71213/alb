@@ -113,19 +113,19 @@ export default function Home() {
     const timer = setInterval(() => {
       let finished = true;
 
-      stats.forEach((item) => {
-        if (current[item.key] < item.value) {
-          current[item.key] += Math.ceil(
-            item.value / steps
-          );
+      // stats.forEach((item) => {
+      //   if (current[item.key] < item.value) {
+      //     current[item.key] += Math.ceil(
+      //       item.value / steps
+      //     );
 
-          if (current[item.key] > item.value) {
-            current[item.key] = item.value;
-          }
+      //     if (current[item.key] > item.value) {
+      //       current[item.key] = item.value;
+      //     }
 
-          finished = false;
-        }
-      });
+      //     finished = false;
+      //   }
+      // });
 
       setCounts({ ...current });
 
@@ -302,14 +302,14 @@ visibility and control.
             `}
           >
 
-            <h3 className="text-3xl font-bold text-white md:text-5xl">
+            {/* <h3 className="text-3xl font-bold text-white md:text-5xl">
               {counts[item.key]}
               {item.suffix}
             </h3>
 
             <p className="mt-2 text-sm text-gray-400">
               {item.label}
-            </p>
+            </p> */}
 
           </div>
         ))}

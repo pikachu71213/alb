@@ -54,7 +54,7 @@ const certifications = [
 
   return (
     <div>
-      <section className="w-full overflow-hidden py-16 bg-black">
+      <section className="w-full overflow-hidden py-10 pt-5 bg-black">
 <div className="text-center  mb-10">
           <h2 className="text-3xl md:text-[45px] font-semibold text-white">
             Our End  <span className="text-red-500">Customers</span>
@@ -129,7 +129,7 @@ const certifications = [
         </div>
       </div>
     </section>
-    <section className="w-full bg-black py-20 px-4">
+    <section className="w-full bg-black py-10 px-4">
       <div className="max-w-6xl mx-auto">
 
         {/* HEADING */}

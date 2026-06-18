@@ -548,7 +548,7 @@ the focus of everything.
         </div>
       </div>
     </section> */}
-   <section className="w-full bg-black py-10 overflow-hidden">
+   <section className="w-full bg-black py-10 pb-20 overflow-hidden">
   <div className="max-w-7xl mx-auto px-4">
 
     {/* HEADING */}

@@ -53,7 +53,7 @@ const blogs = [
 
 function BlogSlider() {
   return (
-    <section className="w-full bg-black py-20 px-4 overflow-hidden">
+    <section className="w-full bg-black pt-0 pb-10 px-4 overflow-hidden">
 
       <div className="max-w-7xl mx-auto relative">
 

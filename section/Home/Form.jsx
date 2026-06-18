@@ -17,7 +17,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="bg-black text-white py-20 px-6 md:px-12 lg:px-24 flex items-center justify-center font-sans overflow-hidden">
+    <section className="bg-black text-white py-10 px-6 md:px-12 lg:px-24 flex items-center justify-center font-sans overflow-hidden">
       <div className="relative max-w-6xl w-full py-16 px-6 md:px-14">
         
        

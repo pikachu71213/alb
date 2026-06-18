@@ -223,7 +223,7 @@ function Middle() {
 
   return (
     <>
-    <section className="w-full bg-black py-20 px-4">
+    <section className="w-full bg-black pb-5 px-4">
       <div className="max-w-7xl mx-auto">
         
         {/* HEADING */}
@@ -325,7 +325,7 @@ function Middle() {
 
   </div>
 </section>
-    <section className="bg-black text-white py-16 px-4 md:px-8 lg:px-16 min-h-screen flex items-center">
+    <section className="bg-black text-white py-10 px-4 md:px-8 lg:px-16 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         {/* Left Side: Image & Callout Column (5 Columns wide on large screens) */}
@@ -548,7 +548,7 @@ the focus of everything.
         </div>
       </div>
     </section> */}
-   <section className="w-full bg-black py-20 overflow-hidden">
+   <section className="w-full bg-black py-10 overflow-hidden">
   <div className="max-w-7xl mx-auto px-4">
 
     {/* HEADING */}
@@ -639,7 +639,7 @@ the focus of everything.
 
 <img
   src={item.img}
-  alt=""
+  alt="" className="h-[30px] w-[30px]"
 />
 
 

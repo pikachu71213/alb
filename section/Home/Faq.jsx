@@ -120,7 +120,7 @@ function FAQSection() {
                 >
                   <div className="overflow-hidden">
 
-                    <p className="text-gray-400 text-[14px] md:text-[18px] leading-relaxed px-6 pb-6 text-sm md:text-base">
+                    <p className="text-gray-400 text-[12px] md:text-[14px] leading-relaxed px-6 pb-6 text-sm md:text-base">
                       {item.answer}
                     </p>
 

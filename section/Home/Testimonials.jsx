@@ -116,7 +116,7 @@ function TestimonialSlider() {
 
             {/* CARD */}
             <div
-              className={`relative bg-[#151515] rounded-3xl p-8 z-10 min-h-[340px]
+              className={`relative bg-[#151515] rounded-3xl pt-8 z-10 min-h-[340px]
               transition-all duration-700 ease-in-out
               ${
                 animate

@@ -25,7 +25,7 @@ export default function BannerSlider() {
   }, []);
 
   return (
-    <section className="relative w-full h-[156px] lg:h-[600px] overflow-hidden">
+    <section className="relative w-full h-[140px] lg:h-[600px] overflow-hidden">
       
       {/* Slider Track */}
       <div
@@ -51,7 +51,7 @@ export default function BannerSlider() {
       {/* Prev */}
       <button
         onClick={prevSlide}
-        className="absolute left-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/50 text-white flex items-center justify-center"
+        className="hidden md:block absolute left-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/50 text-white flex items-center justify-center"
       >
         <ChevronLeft />
       </button>
@@ -59,7 +59,7 @@ export default function BannerSlider() {
       {/* Next */}
       <button
         onClick={nextSlide}
-        className="absolute right-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/50 text-white flex items-center justify-center"
+        className="hidden md:block absolute right-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/50 text-white flex items-center justify-center"
       >
         <ChevronRight />
       </button>

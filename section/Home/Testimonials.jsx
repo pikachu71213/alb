@@ -173,14 +173,14 @@ function TestimonialSlider() {
 
   <button
     onClick={prevSlide}
-    className="w-12 h-12 -mr-[50px] rounded-full border border-gray-700 flex cursor-pointer items-center justify-center text-white hover:bg-red-500 hover:border-red-500 transition-all duration-300"
+    className="hidden md:block w-12 h-12 -mr-[50px] rounded-full border border-gray-700 flex cursor-pointer items-center justify-center text-white hover:bg-red-500 hover:border-red-500 transition-all duration-300"
   >
     <ChevronUp size={22} />
   </button>
 
   <button
     onClick={nextSlide}
-    className="w-12 h-12 -mr-[50px] rounded-full border border-gray-700 cursor-pointer flex items-center justify-center text-white hover:bg-red-500 hover:border-red-500 transition-all duration-300"
+    className="hidden md:block w-12 h-12 -mr-[50px] rounded-full border border-gray-700 cursor-pointer flex items-center justify-center text-white hover:bg-red-500 hover:border-red-500 transition-all duration-300"
   >
     <ChevronDown size={22} />
   </button>

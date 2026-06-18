@@ -276,28 +276,51 @@ function Middle() {
       </div>
     </section>
     {/* new Updated */}
-    <section className="bg-black text-white py-16 px-6">
-      <div className=" mx-auto text-center">
-        
-        {/* Title */}
-        <h2 className="text-2xl md:text-[45px] font-semibold tracking-tight mb-12">
-          Partnership Built <span className="text-[#FF3B30]">On Trust</span>
-        </h2>
+    <section className="bg-black text-white py-16 px-6 overflow-hidden">
+  <div className="mx-auto text-center">
 
-        {/* Logos Flexbox Container */}
-        <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16 lg:gap-20">
-          {logos.map((logo, index) => (
-            <img 
-              key={index} 
-              src={logo.src} 
-              alt={logo.alt} 
-              className="h-auto w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity duration-200"
-            />
-          ))}
-        </div>
+    {/* Title */}
+    <h2 className="text-3xl md:text-[45px] font-semibold tracking-tight mb-12">
+      Partnership Built <span className="text-[#FF3B30]">On Trust</span>
+    </h2>
+
+    {/* Infinite Slider */}
+    <div className="relative">
+      <div className="flex w-max items-center gap-10 md:gap-16 lg:gap-20 animate-slide">
+
+        {logos.map((logo, index) => (
+          <img
+            key={index}
+            src={logo.src}
+            alt={logo.alt}
+            className="
+              h-auto w-auto object-contain
+              brightness-0 invert opacity-80
+              hover:opacity-100 transition-opacity duration-200
+              w-24 md:w-auto
+            "
+          />
+        ))}
+
+        {/* Duplicate logos for seamless loop */}
+        {logos.map((logo, index) => (
+          <img
+            key={`duplicate-${index}`}
+            src={logo.src}
+            alt={logo.alt}
+            className="
+              h-auto w-auto object-contain
+              brightness-0 invert opacity-80
+              w-24 md:w-auto
+            "
+          />
+        ))}
 
       </div>
-    </section>
+    </div>
+
+  </div>
+</section>
     <section className="bg-black text-white py-16 px-4 md:px-8 lg:px-16 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
@@ -329,7 +352,7 @@ function Middle() {
   className="inline-flex items-center gap-2 px-5 py-4 rounded-full border border-[#ff3b30] bg-transparent text-[20px] cursor-pointer hover:bg-[#ff3b30]/10 transition"
 >
   <span className="text-[#ff3b30]">★</span>
-  <span className="font-medium">
+  <span className="font-medium whitespace-nowrap">
     Smart Solutions. <span className="text-[#ff3b30]">Real Impact</span>
   </span>
 </button>
@@ -607,7 +630,7 @@ the focus of everything.
 
                   <img
                     src={item.img}
-                    alt=""
+                    alt=""  
                   />
 
 

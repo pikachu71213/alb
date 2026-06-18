@@ -95,7 +95,7 @@ function FAQSection() {
                   className="w-full flex items-center justify-between text-left p-6"
                 >
 
-                  <h3 className="text-white text-lg md:text-xl font-medium pr-5">
+                  <h3 className="text-white text-[16px] md:text-xl font-medium pr-5">
                     {item.question}
                   </h3>
 
@@ -120,7 +120,7 @@ function FAQSection() {
                 >
                   <div className="overflow-hidden">
 
-                    <p className="text-gray-400 leading-relaxed px-6 pb-6 text-sm md:text-base">
+                    <p className="text-gray-400 text-[14px] md:text-[18px] leading-relaxed px-6 pb-6 text-sm md:text-base">
                       {item.answer}
                     </p>
 

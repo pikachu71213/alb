@@ -54,7 +54,7 @@ const steps = [
     desc: "We help you get started with the right foundation. From setup to training, we ensure a smooth and successful start.",
     color: "border-red-500",
     bgColor: "bg-red-500",
-    text: "text-red-500 text-[40px]",
+    text: "text-red-500  text-2xl md:text-[40px]",
     icon: "images/ww1.svg",
     img: "images/a1.svg",
     img2: "images/aa1.svg",
@@ -73,7 +73,7 @@ const steps = [
     desc: "We help you scale your workflow with smart integrations and advanced solutions tailored to your business.",
     color: "border-blue-500",
     bgColor: "bg-blue-500",
-    text: "text-blue-500 text-[40px]",
+    text: "text-blue-500  text-2xl md:text-[40px]",
     icon: "images/ww2.svg",
     img: "images/a2.svg",
     img2: "images/aa2.svg",
@@ -94,7 +94,7 @@ const steps = [
     desc: "We provide continuous support and optimization to ensure long-term performance and reliability.",
     color: "border-green-500",
     bgColor: "bg-green-500",
-    text: "text-green-500 text-[40px]",
+    text: "text-green-500  text-2xl md:text-[40px]",
     icon: "images/ww3.svg",
     img: "images/a3.svg",
     img2: "images/aa3.svg",
@@ -580,7 +580,7 @@ the focus of everything.
             `}
           >
 
-            <div className="flex items-start justify-between gap-5">
+            <div className="flex items-start justify-between gap-1 md:gap-5">
 
 
               {/* LEFT CONTENT */}
@@ -605,7 +605,7 @@ the focus of everything.
                 {/* TEXT */}
                 <div>
 
-                  <h3 className="text-white text-3xl md:text-[40px] font-semibold flex items-center gap-2">
+                  <h3 className="text-white text-2xl md:text-[40px] font-semibold flex items-center gap-1 md:gap-2">
                     <span className={item.text}>
                       {item.number}
                     </span>
@@ -631,7 +631,7 @@ the focus of everything.
 
                 {/* ONLY THIS AREA HAS GROUP */}
                <div
-  className="group cursor-pointer relative"
+  className="group cursor-pointer relative flex-shrink-0"
   onClick={() =>
     setActiveStep(activeStep === index ? null : index)
   }
@@ -639,7 +639,7 @@ the focus of everything.
 
 <img
   src={item.img}
-  alt="" className="h-[30px] w-[30px]"
+  alt="" className="h-[30px] w-[30px] "
 />
 
 
@@ -664,7 +664,7 @@ invisible
 group-hover:opacity-100
 group-hover:visible
 
-max-sm:left-[-136px]
+max-sm:left-[-125px]
 max-sm:-translate-x-1/2
 max-sm:top-12
 

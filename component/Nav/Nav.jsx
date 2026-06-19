@@ -12,7 +12,7 @@ function Nav() {
         
         {/* Logo */}
         <div className="flex items-center gap-3 select-none">
-          <img src="/images/nla.svg" alt="Logo" />
+          <img src="/images/nla.svg" alt="Logo" className="h-[30px] md:h-[50px]" />
         </div>
 
         {/* Mobile Toggle Button */}
@@ -63,7 +63,7 @@ function Nav() {
   <li>
     <Link
       href="/about"
-      className="hover:text-[#ff403a] transition-colors duration-200"
+      className="text-[#FFFFFF] hover:text-[#ff403a] transition-colors duration-200"
     >
       About us
     </Link>
@@ -72,17 +72,17 @@ function Nav() {
   <li>
     <Link
       href="/solutions"
-      className="flex items-center gap-1 hover:text-[#ff403a] transition-colors duration-200"
+      className="flex items-center gap-1 text-[#FFFFFF] hover:text-[#ff403a] transition-colors duration-200"
     >
       Solutions
-      <span className="text-[10px] inline-block rotate-180">ˆ</span>
+      <span className="text-[10px] inline-block rotate-180"></span>
     </Link>
   </li>
 
   <li>
     <Link
       href="/services"
-      className="hover:text-[#ff403a] transition-colors duration-200"
+      className="text-[#FFFFFF] hover:text-[#ff403a] transition-colors duration-200"
     >
       Services
     </Link>
@@ -91,7 +91,7 @@ function Nav() {
   <li>
     <Link
       href="/career"
-      className="hover:text-[#ff403a] transition-colors duration-200"
+      className="text-[#FFFFFF] hover:text-[#ff403a] transition-colors duration-200"
     >
       Careers
     </Link>
@@ -100,7 +100,7 @@ function Nav() {
   <li>
     <Link
       href="/blog"
-      className="hover:text-[#ff403a] transition-colors duration-200"
+      className="text-[#FFFFFF] hover:text-[#ff403a] transition-colors duration-200"
     >
       Blog
     </Link>
@@ -109,7 +109,7 @@ function Nav() {
   <li>
     <Link
       href="/contact-us"
-      className="hover:text-[#ff403a] transition-colors duration-200"
+      className="text-[#FFFFFF] hover:text-[#ff403a] transition-colors duration-200"
     >
       Contact Us
     </Link>

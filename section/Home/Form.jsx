@@ -37,13 +37,13 @@ export default function ContactSection() {
             </p>
             
             {/* Action Buttons Row */}
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex  items-center gap-4">
               <a 
                 href="#book-call" 
                 className="inline-flex items-center gap-3 bg-white text-[#ff3b30] font-bold px-6 py-3 rounded-xl transition-all duration-200 hover:bg-neutral-100 shadow-md text-sm md:text-base"
               >
                 <PhoneCall className="w-5 h-5 fill-[#ff3b30]" />
-                Book A Call
+                Call Us
               </a>
               
               <a
@@ -52,7 +52,7 @@ export default function ContactSection() {
   rel="noopener noreferrer"
   className="inline-flex items-center gap-3 bg-transparent text-white font-bold px-6 py-3 rounded-xl border border-gray-600 hover:border-gray-400 hover:bg-neutral-900/30 transition-all duration-200 text-sm md:text-base"
 >
-  <FaWhatsapp className="w-7 h-7 text-[#25D366]" />
+  <FaWhatsapp className="w-7 h-7 text-[#25D366] whitespace-nowrap" />
   On WhatsApp
 </a>
             </div>

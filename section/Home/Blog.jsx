@@ -4,7 +4,7 @@ import React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay, Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -60,16 +60,16 @@ function BlogSlider() {
         {/* HEADING */}
         <div className="text-center mb-10">
           <h2 className="text-white text-3xl md:text-[45px] font-bold">
-            Our <span className="text-red-500">Blogs</span>
+            Our <span className="text-[#ff403a]">Blogs</span>
           </h2>
         </div>
 
         {/* CUSTOM BUTTONS */}
-        <button className="blog-prev absolute left-0 top-1/2 -translate-y-2 z-20 w-12 h-12 rounded-full bg-red-500 text-white flex items-center justify-center hover:scale-110 transition-all cursor-pointer">
+        <button className="hidden md:block blog-prev absolute left-0 top-1/2 -translate-y-2 z-20 w-12 h-12 rounded-full bg-[#] text-white flex items-center justify-center hover:scale-110 transition-all cursor-pointer ">
           <ChevronLeft size={24} />
         </button>
 
-        <button className="blog-next absolute right-0 top-1/2 -translate-y-2 z-20 w-12 h-12 rounded-full bg-red-500 text-white flex items-center justify-center hover:scale-110 transition-all cursor-pointer">
+        <button className="hidden md:block blog-next absolute right-0 top-1/2 -translate-y-2 z-20 w-12 h-12 rounded-full bg-[#] text-white flex items-center justify-center hover:scale-110 transition-all cursor-pointer ">
           <ChevronRight size={24} />
         </button>
 
@@ -77,7 +77,7 @@ function BlogSlider() {
         <div className="px-1 md:px-14">
 
           <Swiper
-            modules={[Navigation, Autoplay]}
+            modules={[Navigation, Autoplay, Pagination]}
             spaceBetween={24}
             slidesPerView={3}
             loop={true}
@@ -89,6 +89,9 @@ function BlogSlider() {
             navigation={{
               prevEl: ".blog-prev",
               nextEl: ".blog-next",
+            }}
+             pagination={{
+              clickable: true,
             }}
             breakpoints={{
               0: {
@@ -130,7 +133,7 @@ function BlogSlider() {
                       {blog.description}
                     </p>
 
-                    <button className="mt-5 px-5 py-2 border border-red-500 text-red-500 rounded-lg hover:bg-red-500 hover:text-white transition-all duration-300">
+                    <button className="mt-5 px-5 py-2 border border-[#ff403a] text-[#ff403a] rounded-lg hover:bg-[#ff403a] hover:text-white transition-all duration-300">
                       Read More
                     </button>
 

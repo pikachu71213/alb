@@ -51,7 +51,7 @@ export default function BannerSlider() {
       {/* Prev */}
       <button
         onClick={prevSlide}
-        className="hidden md:block absolute left-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/50 text-white flex items-center justify-center"
+        className="hidden cursor-pointer md:block p-[10px] absolute left-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/50 text-white flex items-center justify-center"
       >
         <ChevronLeft />
       </button>
@@ -59,7 +59,7 @@ export default function BannerSlider() {
       {/* Next */}
       <button
         onClick={nextSlide}
-        className="hidden md:block absolute right-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/50 text-white flex items-center justify-center"
+        className="hidden cursor-pointer md:block p-[10px] absolute right-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/50 text-white flex items-center justify-center"
       >
         <ChevronRight />
       </button>
@@ -72,7 +72,7 @@ export default function BannerSlider() {
             onClick={() => setCurrent(index)}
             className={`h-3 w-3 rounded-full transition-all ${
               current === index
-                ? "bg-red-500"
+                ? "bg-[#ff403a]"
                 : "bg-white/50"
             }`}
           />

@@ -61,7 +61,7 @@ function FAQSection() {
               <br />
               Asked
               <br />
-              <span className="text-red-500">Questions</span>
+              <span className="text-[#ff403a]">Questions</span>
             </h2>
 
             {/* IMAGE */}
@@ -84,7 +84,7 @@ function FAQSection() {
                 className={`border rounded-2xl overflow-hidden transition-all duration-500
                 ${
                   active === index
-                    ? "border-red-500 bg-[#111111]"
+                    ? "border-[#ff403a] bg-[#111111]"
                     : "border-gray-700 bg-black"
                 }`}
               >
@@ -101,7 +101,7 @@ function FAQSection() {
 
                   <span className="text-white flex-shrink-0">
                     {active === index ? (
-                      <X size={24} className="text-red-500" />
+                      <X size={24} className="text-[#ff403a]" />
                     ) : (
                       <Plus size={24} />
                     )}

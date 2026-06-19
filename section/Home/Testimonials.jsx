@@ -75,20 +75,20 @@ function TestimonialSlider() {
   }, [current]);
 
   return (
-    <section className="w-full bg-black py-20 px-4 overflow-hidden">
+    <section className="w-full bg-black py-10 pt-0 md:pt-20 px-4 overflow-hidden">
       <div className="max-w-6xl mx-auto">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 px-[30px] lg:px-0 items-center">
           <div>
 
-            <p className="text-red-500 uppercase tracking-widest text-sm mb-4">
+            <p className="text-[#ff403a] uppercase tracking-widest text-sm mb-4">
               Testimonials
             </p>
 
-            <h2 className="text-white text-3xl md:text-[45px] font-semibold leading-tight">
+            <h2 className="text-white text-3xl md:text-[45px] font-semibold leading-tight ">
               What People Say
               <br />
-              <span className="text-red-500">About Us.</span>
+              <span className="text-[#ff403a]">About Us.</span>
             </h2>
 
             {/* DOTS */}
@@ -99,7 +99,7 @@ function TestimonialSlider() {
                   onClick={() => setCurrent(index)}
                   className={`transition-all duration-500 rounded-full ${
                     current === index
-                      ? "w-8 h-3 bg-red-500"
+                      ? "w-8 h-3 bg-[#ff403a]"
                       : "w-3 h-3 bg-gray-500"
                   }`}
                 />
@@ -112,7 +112,7 @@ function TestimonialSlider() {
           <div className="relative">
 
             {/* RED BORDER */}
-            <div className="absolute top-5 left-5 w-full h-full border border-red-500 rounded-3xl"></div>
+            <div className="absolute top-5 left-5 w-full h-full border border-[#ff403a] rounded-3xl"></div>
 
             {/* CARD */}
             <div
@@ -173,14 +173,14 @@ function TestimonialSlider() {
 
   <button
     onClick={prevSlide}
-    className="hidden md:block w-12 h-12 -mr-[50px] rounded-full border border-gray-700 flex cursor-pointer items-center justify-center text-white hover:bg-red-500 hover:border-red-500 transition-all duration-300"
+    className="hidden md:block w-12 h-12 p-[10px] -mr-[50px] rounded-full border border-gray-700 flex cursor-pointer items-center justify-center text-white hover:bg-[#ff403a] hover:border-[#ff403a] transition-all duration-300"
   >
     <ChevronUp size={22} />
   </button>
 
   <button
     onClick={nextSlide}
-    className="hidden md:block w-12 h-12 -mr-[50px] rounded-full border border-gray-700 cursor-pointer flex items-center justify-center text-white hover:bg-red-500 hover:border-red-500 transition-all duration-300"
+    className="hidden md:block w-12 h-12 p-[10px] -mr-[50px] rounded-full border border-gray-700 cursor-pointer flex items-center justify-center text-white hover:bg-[#ff403a] hover:border-[#ff403a] transition-all duration-300"
   >
     <ChevronDown size={22} />
   </button>

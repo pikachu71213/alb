@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PhoneCall, User, Phone, Mail, ChevronDown } from 'lucide-react';
-
+import { FaWhatsapp } from "react-icons/fa";
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
@@ -46,21 +46,15 @@ export default function ContactSection() {
                 Book A Call
               </a>
               
-              <a 
-                href="https://wa.me/your-number" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-transparent text-white font-bold px-6 py-3 rounded-xl border border-gray-600 hover:border-gray-400 hover:bg-neutral-900/30 transition-all duration-200 text-sm md:text-base"
-              >
-                {/* Accurate WhatsApp Icon SVG */}
-                <svg 
-                  className="w-5 h-5 text-white fill-current" 
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.24 8.404 3.484 2.24 2.244 3.475 5.231 3.471 8.411-.004 6.597-5.342 11.945-11.893 11.945-2.01-.001-3.986-.511-5.731-1.483L0 24zm6.59-4.846c1.657.983 3.283 1.517 4.928 1.519 5.433 0 9.85-4.414 9.853-9.847.002-2.632-1.023-5.105-2.887-6.973C16.677 1.986 14.205.961 11.579.961c-5.438 0-9.854 4.416-9.857 9.85-.001 1.741.454 3.435 1.32 4.933l-.994 3.633 3.719-.973zm12.115-7.004c-.316-.158-1.87-.923-2.158-1.028-.288-.105-.499-.158-.709.158-.21.316-.81.105-.993.316-.183.21-.367.237-.683.079-.316-.158-1.334-.492-2.542-1.57-1.011-.902-1.694-2.017-1.892-2.333-.198-.316-.021-.487.137-.644.143-.141.316-.368.474-.553.158-.184.21-.316.316-.527.105-.21.053-.395-.026-.553-.079-.158-.709-1.71-.972-2.342-.257-.616-.517-.533-.709-.543-.184-.01-.395-.012-.605-.012s-.553.079-.842.395c-.289.316-1.105 1.08-1.105 2.632 0 1.553 1.132 3.053 1.29 3.264.158.21 2.228 3.402 5.398 4.766.754.325 1.344.519 1.803.665.757.241 1.446.207 1.99.127.608-.089 1.87-.764 2.133-1.464.264-.699.264-1.29.184-1.411-.079-.122-.289-.198-.605-.355z" />
-                </svg>
-                On Chats
-              </a>
+              <a
+  href="https://wa.me/your-number"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-3 bg-transparent text-white font-bold px-6 py-3 rounded-xl border border-gray-600 hover:border-gray-400 hover:bg-neutral-900/30 transition-all duration-200 text-sm md:text-base"
+>
+  <FaWhatsapp className="w-7 h-7 text-[#25D366]" />
+  On WhatsApp
+</a>
             </div>
           </div>
 

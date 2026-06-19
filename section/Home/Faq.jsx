@@ -48,7 +48,7 @@ function FAQSection() {
   };
 
   return (
-    <section className="w-full bg-black py-10 px-4 overflow-hidden">
+    <section className="w-full bg-black  py-3 md:py-13 pb-13 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 items-start">
@@ -56,13 +56,13 @@ function FAQSection() {
           {/* LEFT SIDE */}
           <div className="flex flex-col items-center lg:items-center">
 
-           <h2 className="text-white text-3xl md:text-[45px] font-semibold leading-tight mb-10">
+           <h2 className="text-white text-3xl md:text-[45px] font-semibold leading-tight mt-0 md:mt-0 mb-7">
   Frequently 
   <br className="hidden md:block" /> 
   
     Asked
   <br className="hidden md:block" />
-  <span className="text-red-500"> Questions </span>
+  <span className="text-[#ff403a]"> Questions </span>
 </h2>
             {/* IMAGE */}
             <div className="mt-10 hidden md:block">
@@ -84,7 +84,7 @@ function FAQSection() {
                 className={`border rounded-2xl overflow-hidden transition-all duration-500
                 ${
                   active === index
-                    ? "border-red-500 bg-[#111111]"
+                    ? "border-[#ff403a] bg-[#111111]"
                     : "border-gray-700 bg-black"
                 }`}
               >
@@ -101,7 +101,7 @@ function FAQSection() {
 
                   <span className="text-white flex-shrink-0">
                     {active === index ? (
-                      <X size={24} className="text-red-500" />
+                      <X size={24} className="text-[#ff403a]" />
                     ) : (
                       <Plus size={24} />
                     )}

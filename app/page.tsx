@@ -171,7 +171,7 @@ Get my AI readiness report
 
       </div>
     </section> */}
-    <section className="relative overflow-hidden bg-[#111] py-24">
+    <section className="relative overflow-hidden bg-[#111] py-10 md:py-20">
       {/* Red Stripes */}
       <div
         className="absolute inset-0 opacity-25 bg-black"
@@ -183,7 +183,7 @@ Get my AI readiness report
           <span className="text-[#FF403A]"> Automate Everything.</span>
         </h2>
 
-        <p className="mx-auto mt-5 max-w-3xl text-[16px] md:text-[20px] text-[#FFFFFF]">
+        <p className="mx-auto mt-4 max-w-3xl text-[16px] md:text-[20px] text-[#FFFFFF]">
           Industry-leading platforms that bring strategy, delivery, and
           automation together enabling your teams to move faster with complete
           visibility.
@@ -249,7 +249,7 @@ visibility and control.
 
  <section
   ref={sectionRef}
-  className="relative overflow-hidden bg-black py-20"
+  className="relative overflow-hidden bg-black pt-3 md:pt-14 py-14 md:py-20"
 >
   <div className="relative mx-auto max-w-7xl px-6">
 
@@ -319,7 +319,7 @@ visibility and control.
 
 
     {/* Mobile Image */}
-    <div className="mt-12 block lg:hidden">
+    <div className="-mt-10 md:mt-12  block lg:hidden">
       <img
         src="/images/nsimg.png"
         alt="Strategic Growth"

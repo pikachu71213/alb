@@ -5,9 +5,8 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white font-sans selection:bg-[#ff3b30]">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-6 md:py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
-          
           {/* Column 1: Logo Brand Area (4 columns wide) */}
           <div className="lg:col-span-4 flex flex-col justify-start">
             <div className="flex items-center gap-3">

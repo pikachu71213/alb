@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useState } from "react";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { Handshake, Award, Settings, ShieldCheck, ThumbsUp,  ArrowUpRight, } from 'lucide-react';
 
 
@@ -52,9 +53,9 @@ const steps = [
     number: "01",
     title: "ADOPT",
     desc: "We help you get started with the right foundation. From setup to training, we ensure a smooth and successful start.",
-    color: "border-red-500",
-    bgColor: "bg-red-500",
-    text: "text-red-500  text-2xl md:text-[40px]",
+    color: "border-[#ff403a]",
+    bgColor: "bg-[#ff403a]",
+    text: "text-[#ff403a]  text-2xl md:text-[40px]",
     icon: "images/ww1.svg",
     img: "images/a1.svg",
     img2: "images/aa1.svg",
@@ -160,6 +161,7 @@ const features = [
 ];
 
 function Middle() {
+const [openIndex, setOpenIndex] = useState(null);
 
  const [activeStep, setActiveStep] = useState(null);
 
@@ -227,14 +229,14 @@ function Middle() {
       <div className="max-w-7xl mx-auto">
         
         {/* HEADING */}
-        <div className="text-center mb-14">
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            What <span className="text-red-500">We Do</span>
+        <div className="text-center mb-8 md:mb-10">
+          <h2 className="text-4xl md:text-[45px] font-semibold text-white">
+            What <span className="text-[#ff403a]">We Do</span>
           </h2>
 
-          <p className="text-gray-300 text-xl md:text-2xl mt-3">
+          <p className="text-gray-300 text-xl md:text-2xl mt-3 ">
             Smart Solutions,{" "}
-            <span className="text-red-500">Measurable Results</span>
+            <span className="text-[#ff403a]">Measurable Results</span>
           </p>
         </div>
 
@@ -243,30 +245,30 @@ function Middle() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="relative border border-gray-700 bg-black rounded-sm p-8 hover:border-red-500 transition duration-300"
+              className="relative border border-gray-700 bg-black rounded-sm p-8 hover:border-[#ff403a] transition duration-300"
             >
               {/* TOP BORDER */}
-              <div className="absolute top-0 left-0 w-full h-[10px] bg-red-500"></div>
+              <div className="absolute top-0 left-0 w-full h-[10px] bg-[#ff403a]"></div>
 
               {/* ICON */}
-              <div className="w-24 h-24 rounded-full bg-red-500 flex items-center justify-center text-white mx-auto mb-8">
+              <div className="w-24 h-24 rounded-full bg-[#ff403a] flex items-center justify-center text-white mx-auto mb-8">
                 <img src={service.icon} alt="" />
               </div>
 
               {/* TITLE */}
-              <h3 className="text-white text-2xl font-bold text-center leading-snug">
+              <h3 className="text-white text-[20px] md:text-[25px] font-bsemiold text-center leading-snug">
                 {service.title}
               </h3>
 
               {/* UNDERLINE */}
-              <div className="w-16 h-[2px] bg-red-500 mx-auto my-6"></div>
+              <div className="w-16 h-[2px] bg-[#ff403a] mx-auto my-6"></div>
 
               {/* LIST */}
               <ul className="space-y-4">
                 {service.items.map((item, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-3 text-gray-300"
+                    className="flex items-start gap-2 text-[#FFFFFF] text-[14px] md:text-[18px]"
                   >
                     <img src="/images/mdc.svg" alt="" />
                     <span>{item}</span>
@@ -280,16 +282,16 @@ function Middle() {
       </div>
     </section>
     {/* new Updated */}
-    <section className="bg-black text-white py-16 px-6 overflow-hidden">
+    <section className="bg-black text-white py-10 px-6 overflow-hidden">
   <div className="mx-auto text-center">
 
     {/* Title */}
-    <h2 className="text-3xl md:text-[45px] font-semibold tracking-tight mb-12">
+    <h2 className="text-3xl md:text-[45px] font-semibold tracking-tight mb-0 md:mb-4">
       Partnership Built <span className="text-[#FF3B30]">On Trust</span>
     </h2>
 
     {/* Infinite Slider */}
-    <div className="relative">
+    <div className="relative mt-4 ">
       <div className="flex w-max items-center gap-10 md:gap-16 lg:gap-20 animate-slide">
 
         {logos.map((logo, index) => (
@@ -298,7 +300,7 @@ function Middle() {
             src={logo.src}
             alt={logo.alt}
             className="
-              h-auto w-auto object-contain
+              h-[20px] md:h-auto w-auto object-contain
               brightness-0 invert opacity-80
               hover:opacity-100 transition-opacity duration-200
               w-24 md:w-auto
@@ -313,7 +315,7 @@ function Middle() {
             src={logo.src}
             alt={logo.alt}
             className="
-              h-auto w-auto object-contain
+              h-[20px] md:h-auto w-auto object-contain
               brightness-0 invert opacity-80
               w-24 md:w-auto
             "
@@ -325,81 +327,99 @@ function Middle() {
 
   </div>
 </section>
-    <section className="bg-black text-white py-10 px-4 md:px-8 lg:px-16 min-h-screen flex items-center">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        {/* Left Side: Image & Callout Column (5 Columns wide on large screens) */}
-        <div className="lg:col-span-5 flex flex-col items-center text-center">
-          <div className="relative w-full rounded-lg overflow-hidden mb-6 group">
-            {/* Replace with your actual image path */}
-            <img 
-              src="/images/asd.png" 
-              alt="People looking at neon question mark" 
-              className="w-full h-[350px] object-cover rounded-lg brightness-90 contrast-125"
-            />
-            {/* Simulated Neon Overlay Effect */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
-          </div>
+   <section className="bg-black text-white py-10 pb-4 md:pb-10 px-4 md:px-8 lg:px-16 min-h-screen flex items-center">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
-          <p className="text-[16px] md:text-[20px] uppercase tracking-[0.2em] text-gray-400 mb-2">
-            Questions Are Normal
-          </p>
-          <h3 className="text-xl md:text-[30px] font-semibold tracking-wide uppercase mb-1">
-            Delivering Solutions
-          </h3>
-          <h3 className="text-xl md:text-[30px] font-semibold tracking-wide uppercase text-[#ff3b30] mb-6">
-            Is Our Superpower
-          </h3>
+    {/* Left Side */}
+    <div className="lg:col-span-5 flex flex-col items-center text-center">
 
-          {/* Pill Button */}
-        <button
-  className="inline-flex items-center gap-2 px-5 py-4 rounded-full border border-[#ff3b30] bg-transparent text-[20px] cursor-pointer hover:bg-[#ff3b30]/10 transition"
->
-  <span className="text-[#ff3b30]">★</span>
-  <span className="font-medium whitespace-nowrap">
-    Smart Solutions. <span className="text-[#ff3b30]">Real Impact</span>
-  </span>
-</button>
+      {/* Image only on Desktop */}
+      <div className="relative w-full rounded-lg overflow-hidden mb-6 group hidden lg:block">
+        <img
+          src="/images/asd.png"
+          alt="People looking at neon question mark"
+          className="w-full h-[350px] object-cover rounded-lg brightness-90 contrast-125"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+      </div>
+
+      <p className="text-[16px] md:text-[20px] uppercase tracking-[0.2em] text-gray-400 mb-2">
+        Questions Are Normal
+      </p>
+
+      <h3 className="text-xl md:text-[30px] font-semibold tracking-wide uppercase mb-1">
+        Delivering Solutions
+      </h3>
+
+      <h3 className="text-xl md:text-[30px] font-semibold tracking-wide uppercase text-[#ff3b30] mb-6">
+        Is Our Superpower
+      </h3>
+
+      <button className="-mb-4 inline-flex items-center gap-2 px-5 py-4 rounded-full border border-[#ff3b30] bg-transparent text-[20px] cursor-pointer hover:bg-[#ff3b30]/10 transition">
+        <span className="text-[#ff3b30]">★</span>
+        <span className="font-medium whitespace-nowrap">
+          Smart Solutions. <span className="text-[#ff3b30]">Real Impact</span>
+        </span>
+      </button>
+    </div>
+
+    {/* Right Side */}
+    <div className="lg:col-span-7 flex flex-col justify-center">
+
+      <h2 className="text-2xl md:text-[45px] font-semibold tracking-tight mb-2">
+        Why Albatroz <span className="text-[#ff3b30]">Solutions</span> ?
+      </h2>
+
+      <p className="text-sm md:text-base font-medium text-gray-300 mb-8">
+        Purpose-driven solutions.
+        <span className="text-[#ff3b30]"> Built around you.</span>
+      </p>
+
+      {/* Feature Box */}
+      <div className="relative border border-[#ff3b30] rounded-2xl overflow-hidden">
+
+        {/* Mobile Background Image */}
+        <div className="absolute inset-0 lg:hidden">
+          <img
+            src="/images/asd.png"
+            alt=""
+            className="w-full h-full object-cover object-center"
+          />
+
+          <div className="absolute inset-0 bg-black/65"></div>
         </div>
 
-        {/* Right Side: Content & Features Container (7 Columns wide on large screens) */}
-        <div className="lg:col-span-7 flex flex-col justify-center">
-          {/* Header */}
-          <h2 className="text-2xl md:text-[45px] font-semibold tracking-tight tracking-tight mb-2">
-            Why Albatroz <span className="text-[#ff3b30]">Solutions</span> ?
-          </h2>
-          <p className="text-sm md:text-base font-medium text-gray-300 mb-8">
-            Purpose-driven solutions. <span className="text-[#ff3b30]">Built around you.</span>
-          </p>
+        {/* Desktop Background */}
+        <div className="absolute inset-0 hidden lg:block bg-gradient-to-b from-neutral-900/30 to-transparent"></div>
 
-          {/* Features Outer Box with Red Tinted Border */}
-          <div className="border border-[#ff3b30] rounded-2xl bg-gradient-to-b from-neutral-900/30 to-transparent overflow-hidden">
-            {features1.map((feature, index) => (
-              <div 
-                key={index}
-                className={`flex items-center gap-4 p-5 md:p-6 transition-colors duration-300 hover:bg-neutral-900/50 ${
-                  index !== features1.length - 1 ? 'border-b border-[#ff3b30]' : 'border-[#ff3b30]'
-                }`}
-              >
-                {/* Icon Wrapper Circle */}
-                <div className="flex-shrink-0 w-12 h-12 rounded-full border border-[#ff3b30] bg-black flex items-center justify-center shadow-[0_0_10px_rgba(255,255,255,0.05)]">
-                  {feature.icon}
-                </div>
-
-                {/* Vertical Divider Graphic inside list row */}
-                <div className="h-8 w-[1px] bg-[#FF3B30] mx-1 hidden sm:block"></div>
-
-                {/* Text Content */}
-                <p className="text-sm md:text-[20px] font-semibold tracking-wide text-[#FFFFFF] leading-snug">
-                  {feature.text}
-                </p>
+        {/* Content */}
+        <div className="relative z-10">
+          {features1.map((feature, index) => (
+            <div
+              key={index}
+              className={`flex items-center gap-4 p-5 md:p-6 transition-colors duration-300 hover:bg-neutral-900/50 ${
+                index !== features1.length - 1
+                  ? "border-b border-[#ff3b30]"
+                  : ""
+              }`}
+            >
+              <div className="flex-shrink-0 w-12 h-12 rounded-full border border-[#ff3b30] bg-black flex items-center justify-center shadow-[0_0_10px_rgba(255,255,255,0.05)]">
+                {feature.icon}
               </div>
-            ))}
-          </div>
+
+              <div className="h-8 w-[1px] bg-[#FF3B30] mx-1 hidden sm:block"></div>
+
+              <p className="text-sm md:text-[20px] font-semibold tracking-wide text-white leading-snug">
+                {feature.text}
+              </p>
+            </div>
+          ))}
         </div>
 
       </div>
-    </section>
+    </div>
+  </div>
+</section>
      {/* <section className="w-full py-16 bg-black">
       <div className="max-w-7xl mx-auto px-4">
         
@@ -490,7 +510,7 @@ the focus of everything.
             <h4 className="text-[30px] text-[#FFFFFF] font-semibold mt-2">DELIVERING SOLUTIONS</h4>
             <h5 className="text-[30px] text-[#FF403A] font-semibold">IS OUR SUPERPOWER</h5>
             <div className="flex justify-center">
-           <button className="mt-5 px-6 py-3 rounded-full border border-red-500 text-white hover:bg-red-600 transition rounded-full p-4 cursor-pointer">
+           <button className="mt-5 px-6 py-3 rounded-full border border-[#ff403a] text-white hover:bg-red-600 transition rounded-full p-4 cursor-pointer">
                 ✦ Smart Solutions. <span className="text-red-600"> Real Impact </span>
               </button>
             </div>
@@ -502,19 +522,19 @@ the focus of everything.
            
             <h2 className="text-[45px] font-semibold text-white mb-3">
               Why Albatroz{" "}
-              <span className="text-red-500">Solutions</span>
+              <span className="text-[#ff403a]">Solutions</span>
             </h2>
 
             <p className="text-gray-400 mb-8">
               Purpose-driven solutions. Built around you.
             </p>
 
-            <div className="border border-red-500 rounded-2xl overflow-hidden">
+            <div className="border border-[#ff403a] rounded-2xl overflow-hidden">
               <div className="grid grid-cols-1 sm:grid-cols-2">
                 {features.map((item, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-4 px-5 py-5 border-b border-r border-red-500/50 last:border-b-0"
+                    className="flex items-center gap-4 px-5 py-5 border-b border-r border-[#ff403a]/50 last:border-b-0"
                   >
                     
                     <div className="w-12 h-12 rounded-full border border-white flex items-center justify-center text-white shrink-0">
@@ -538,7 +558,7 @@ the focus of everything.
 
               <h3 className="text-3xl font-bold text-white mt-2">
                 IS OUR{" "}
-                <span className="text-red-500">SUPERPOWER</span>
+                <span className="text-[#ff403a]">SUPERPOWER</span>
               </h3>
 
               
@@ -548,13 +568,13 @@ the focus of everything.
         </div>
       </div>
     </section> */}
-   <section className="w-full bg-black py-10 pb-20 overflow-hidden">
+   <section className="w-full bg-black py-10 pb-4 md:pb-10 overflow-hidden">
   <div className="max-w-7xl mx-auto px-4">
 
     {/* HEADING */}
-    <div className="text-center mb-10">
-      <h2 className="text-3xl md:text-[45px] font-semibold text-white">
-        How We <span className="text-red-500">Work</span>
+    <div className="text-center">
+      <h2 className="text-3xl mb-8 md:mb-10 md:text-[45px] font-semibold text-white">
+        How We <span className="text-[#ff403a]">Work</span>
       </h2>
     </div>
 
@@ -580,11 +600,12 @@ the focus of everything.
             `}
           >
 
+            {/* TOP ROW */}
             <div className="flex items-start justify-between gap-1 md:gap-5">
 
 
               {/* LEFT CONTENT */}
-              <div className="flex gap-4">
+              <div className="flex gap-4 flex-1">
 
 
                 {/* ICON */}
@@ -603,9 +624,9 @@ the focus of everything.
 
 
                 {/* TEXT */}
-                <div>
+                <div className="flex-1 mt-3 md:mt-0">
 
-                  <h3 className="text-white text-2xl md:text-[40px] font-semibold flex items-center gap-1 md:gap-2">
+                  <h3 className="text-white text-2xl md:text-[40px] font-semibold flex items-center -pb-5 gap-1 md:gap-2">
                     <span className={item.text}>
                       {item.number}
                     </span>
@@ -614,107 +635,159 @@ the focus of everything.
                   </h3>
 
 
-                  <p className="text-white text-[18px] leading-relaxed max-w-md">
+                  {/* DESKTOP DESCRIPTION */}
+                  <p className="hidden md:block text-white text-[18px] leading-relaxed max-w-md">
                     {item.desc}
                   </p>
 
-
                 </div>
+
 
               </div>
 
 
 
-              {/* IMAGE ICON WITH HOVER */}
-              <div className="relative">
+              {/* RIGHT IMAGE + MOBILE ARROW */}
+              <div className="relative flex flex-col items-center">
 
 
-                {/* ONLY THIS AREA HAS GROUP */}
-               <div
-  className="group cursor-pointer relative flex-shrink-0"
-  onClick={() =>
-    setActiveStep(activeStep === index ? null : index)
-  }
->
+                {/* IMAGE ICON WITH HOVER */}
+                <div
+                  className="group cursor-pointer relative flex-shrink-0"
+                  onClick={() =>
+                    setActiveStep(activeStep === index ? null : index)
+                  }
+                >
 
-<img
-  src={item.img}
-  alt="" className="h-[30px] w-[30px] "
-/>
+                  <img
+                    src={item.img}
+                    alt=""
+                    className="h-[30px] w-[30px]"
+                  />
 
 
                   {/* HOVER BOX */}
-                <div
-className={`
-absolute
-left-10
-top-0
-${item.bgColor}
-text-white
+                  <div
+                    className={`
+                      absolute
+                      left-10
+                      top-0
+                      ${item.bgColor}
+                      text-white
 
-w-80
-max-w-[calc(100vw-2rem)]
+                      w-80
+                      max-w-[calc(100vw-2rem)]
 
-rounded-xl
-z-50
+                      rounded-xl
+                      z-50
 
-opacity-0
-invisible
+                      opacity-0
+                      invisible
 
-group-hover:opacity-100
-group-hover:visible
+                      group-hover:opacity-100
+                      group-hover:visible
 
-max-sm:left-[-125px]
-max-sm:-translate-x-1/2
-max-sm:top-12
+                      max-sm:left-[-125px]
+                      max-sm:-translate-x-1/2
+                      max-sm:top-12
 
-max-sm:transition-all
-duration-300
+                      max-sm:transition-all
+                      duration-300
 
-${activeStep === index 
-? "max-sm:opacity-100 max-sm:visible" 
-: ""}
-`}
->
-  <h4 className="text-lg text-center py-2 -pb-2 font-semibold  max-sm:text-base">
-    {item.title}
-  </h4>
+                      ${
+                        activeStep === index
+                          ? "max-sm:opacity-100 max-sm:visible"
+                          : ""
+                      }
+                    `}
+                  >
 
-  <ul className="space-y-0 text-sm bg-[#1B1B1B] rounded-b-xl py-2">
-    {item.list.map((point, i) => (
-      <li
-        key={i}
-        className="
-          flex
-          items-center
-          gap-2
-          px-3
-          py-1
-          text-[18px]
-          font-medium
+                    <h4 className="text-lg text-center py-2 font-semibold max-sm:text-base">
+                      {item.title}
+                    </h4>
 
-          max-sm:text-sm
-          max-sm:px-2
-        "
-      >
-        <img
-          src={item.img2}
-          alt=""
-          className="w-5 h-5 flex-shrink-0 max-sm:w-4 max-sm:h-4"
-        />
-        <span>{point}</span>
-      </li>
-    ))}
-  </ul>
-</div>
+
+                    <ul className="space-y-0 text-sm bg-[#1B1B1B] rounded-b-xl py-2">
+
+                      {item.list.map((point, i) => (
+
+                        <li
+                          key={i}
+                          className="
+                            flex
+                            items-center
+                            gap-2
+                            px-3
+                            py-1
+                            text-[18px]
+                            font-medium
+
+                            max-sm:text-sm
+                            max-sm:px-2
+                          "
+                        >
+
+                          <img
+                            src={item.img2}
+                            alt=""
+                            className="w-5 h-5 flex-shrink-0 max-sm:w-4 max-sm:h-4"
+                          />
+
+                          <span>{point}</span>
+
+                        </li>
+
+                      ))}
+
+                    </ul>
+
+                  </div>
 
                 </div>
+
+
+
+                {/* MOBILE DESCRIPTION TOGGLE */}
+                <button
+                  onClick={() =>
+                    setOpenIndex(
+                      openIndex === index ? null : index
+                    )
+                  }
+                  className="md:hidden mt-3 text-white"
+                >
+
+                  {
+                    openIndex === index
+                      ? <FiChevronUp size={24}/>
+                      : <FiChevronDown size={24}/>
+                  }
+
+                </button>
 
 
               </div>
 
 
             </div>
+
+
+
+            {/* MOBILE FULL WIDTH DESCRIPTION */}
+            {
+              openIndex === index && (
+
+                <div className="md:hidden mt-4 w-full">
+
+                  <p className="text-white text-base leading-relaxed">
+                    {item.desc}
+                  </p>
+
+                </div>
+
+              )
+            }
+
 
           </div>
         ))}
@@ -723,17 +796,20 @@ ${activeStep === index
 
 
 
+
       {/* RIGHT SIDE */}
       <div className="relative flex justify-center items-center">
 
-        <div className="
-          absolute
-          w-72
-          h-72
-          bg-red-500/20
-          blur-3xl
-          rounded-full
-        "></div>
+        <div
+          className="
+            absolute
+            w-72
+            h-72
+            bg-[#ff403a]/20
+            blur-3xl
+            rounded-full
+          "
+        ></div>
 
 
         <img

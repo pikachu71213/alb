@@ -7,6 +7,11 @@ import Testimonials from "../Home/Testimonials"
 import Faqsection from "../Home/Faq"
 import BlogSlider from "../Home/Blog"
 import ContactSection from "../Home/Form"
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 function Abovefooter() {
 
@@ -54,10 +59,10 @@ const certifications = [
 
   return (
     <div>
-      <section className="w-full overflow-hidden py-10 pt-5 bg-black">
+      <section className="w-full overflow-hidden py-10 pb-5 md:pb-10  bg-black">
 <div className="text-center  mb-10">
-          <h2 className="text-3xl md:text-[45px] font-semibold text-white">
-            Our End  <span className="text-red-500">Customers</span>
+          <h2 className="text-3xl md:text-[45px] font-semibold text-white -mb-6">
+            Our End  <span className="text-[#ff403a]">Customers</span>
           </h2>
         </div>
         <div className="relative flex overflow-hidden">
@@ -68,7 +73,7 @@ const certifications = [
             {[...images, ...images].map((img, index) => (
              <div
   key={index}
-  className="w-[220px] h-[80px]  rounded-2xl flex items-center justify-center p-2 flex-shrink-0"
+  className="w-[100px] md:w-[220px] h-[40px] md:h-[80px]  rounded-2xl flex items-center justify-center p-2 py-0 flex-shrink-0"
 >
   <img
     src={img}
@@ -100,14 +105,14 @@ const certifications = [
         `}</style>
 
       </section>
-        <section className="bg-[#000000] py-16 px-6">
+        <section className="bg-[#000000] py-6 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-0">
 
         {/* Left Side */}
         <div className="w-full lg:w-[75%]">
-          <h2 className="text-3xl md:text-[45px] font-bold text-[#FFFFFF] mb-4">
+          <h2 className="text-3xl text-center md:text-left md:text-[45px] font-bold text-[#FFFFFF] mb-8 md:mb-4">
            Awards &<span className="text-[#FF403A]"> 
- <br /> Recognition </span>
+ <br className="hidden md:block" /> Recognition </span>
           </h2>
         </div>
         {/* Right Side */}
@@ -129,25 +134,50 @@ const certifications = [
         </div>
       </div>
     </section>
-    <section className="w-full bg-black py-10 px-4">
-      <div className="max-w-6xl mx-auto">
+   <section className="w-full bg-black py-10 px-4">
+  <div className="max-w-6xl mx-auto">
 
-        {/* HEADING */}
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-[45px] font-semibold text-white">
-            Certifications &{" "}
-            <span className="text-[#FF403A]">Accreditations</span>
-          </h2>
+    {/* HEADING */}
+    <div className="text-center">
+      <h2 className="text-3xl mb-8 md:mb-10 md:text-[45px] font-semibold text-white">
+        Certifications &{" "}
+        <span className="text-[#FF403A]">Accreditations</span>
+      </h2>
+    </div>
+
+    {/* Desktop View */}
+    <div className="hidden md:flex flex-wrap justify-center gap-6">
+      {certifications.map((item, index) => (
+        <div
+          key={index}
+          className="w-full sm:w-[320px] bg-[#111111] rounded-2xl p-6 border border-gray-800 hover:border-[#ff403a] transition-all duration-300"
+        >
+          <h3 className="text-white text-[25px] font-bold mb-0">
+            {item.title}
+          </h3>
+
+          <p className="text-[#FF403A] italic text-[18px] font-medium mb-1">
+            {item.subtitle}
+          </p>
+
+          <p className="text-[#FFFFFF] text-[16px] leading-relaxed">
+            {item.description}
+          </p>
         </div>
+      ))}
+    </div>
 
-        {/* CARDS */}
-        <div className="flex flex-wrap justify-center gap-6">
-
-          {certifications.map((item, index) => (
-            <div
-              key={index}
-              className="w-full sm:w-[320px] bg-[#111111] rounded-2xl p-6 border border-gray-800 hover:border-red-500 transition-all duration-300"
-            >
+    {/* Mobile Slider */}
+    <div className="md:hidden">
+      <Swiper
+        modules={[Pagination]}
+        spaceBetween={16}
+        slidesPerView={1}
+        pagination={{ clickable: true }}
+      >
+        {certifications.map((item, index) => (
+          <SwiperSlide key={index}>
+            <div className="bg-[#111111] rounded-2xl p-6 border border-gray-800 min-h-[220px]">
               <h3 className="text-white text-[25px] font-bold mb-0">
                 {item.title}
               </h3>
@@ -156,15 +186,17 @@ const certifications = [
                 {item.subtitle}
               </p>
 
-              <p className="text-[#FFFFFF] text-[16px] leading-relaxed text-sm">
+              <p className="text-[#FFFFFF] text-[16px] leading-relaxed">
                 {item.description}
               </p>
             </div>
-          ))}
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
 
-        </div>
-      </div>
-    </section>
+  </div>
+</section>
      <Testimonials />
      <Faqsection />
      <BlogSlider />

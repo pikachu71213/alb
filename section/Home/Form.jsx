@@ -68,7 +68,7 @@ export default function ContactSection() {
               {/* Row 1: Name & Mobile */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="relative">
-                  <span className="absolute inset-y-0 left-4 flex items-center text-gray-400">
+                  <span className="absolute inset-y-0 left-4 flex items-center text-[#FFFFFF]">
                     <User className="w-4 h-4" />
                   </span>
                   <input 
@@ -82,7 +82,7 @@ export default function ContactSection() {
                 </div>
 
                 <div className="relative">
-                  <span className="absolute inset-y-0 left-4 flex items-center text-gray-400">
+                  <span className="absolute inset-y-0 left-4 flex items-center text-[#FFFFFF]">
                     <Phone className="w-4 h-4" />
                   </span>
                   <input 
@@ -100,7 +100,7 @@ export default function ContactSection() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="relative">
                   <select 
-                    className="w-full bg-black text-gray-400 px-4 py-3 rounded-md border border-gray-700 focus:outline-none focus:border-[#ff3b30] transition-colors text-sm appearance-none cursor-pointer"
+                    className="w-full bg-black text-[#FFFFFF] px-4 py-3 rounded-md border border-gray-700 focus:outline-none focus:border-[#ff3b30] transition-colors text-sm appearance-none cursor-pointer"
                     value={formData.company}
                     onChange={(e) => setFormData({...formData, company: e.target.value})}
                   >
@@ -115,7 +115,7 @@ export default function ContactSection() {
                 </div>
 
                 <div className="relative">
-                  <span className="absolute inset-y-0 left-4 flex items-center text-gray-400">
+                  <span className="absolute inset-y-0 left-4 flex items-center text-[#FFFFFF]">
                     <Mail className="w-4 h-4" />
                   </span>
                   <input 
@@ -152,9 +152,9 @@ export default function ContactSection() {
     setFormData({ ...formData, agreed: e.target.checked })
   }
 />
-                <label htmlFor="terms" className="text-xs text-gray-400 select-none leading-normal">
+                <label htmlFor="terms" className="text-xs text-[#FFFFFF] select-none leading-normal">
                   I agree to the Terms of Service and{' '}
-                  <a href="#privacy" className="text-gray-300 underline hover:text-[#ff3b30]">
+                  <a href="#privacy" className="text-[#FFFFFF] underline hover:text-[#ff3b30]">
                     Privacy Policy
                   </a>.
                 </label>

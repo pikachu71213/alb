@@ -70,7 +70,7 @@ export default async function Page({ params }) {
           Admin
         </h4>
 
-        <p className="text-sm text-gray-400">
+        <p className="text-sm text-[#FFFFFF]">
           June 2026
         </p>
       </div>
@@ -78,7 +78,7 @@ export default async function Page({ params }) {
 
     <div className="h-8 w-px bg-gray-600"></div>
 
-    <span className="text-gray-400">
+    <span className="text-[#FFFFFF]">
       5 Min Read
     </span>
   </div>

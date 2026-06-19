@@ -138,7 +138,7 @@ using the power of these enterprise solutions.
         
         {/* TOP HEADING */}
         <div className="text-center mb-16">
-          <p className="text-sm uppercase tracking-[4px] text-gray-400 mb-4">
+          <p className="text-sm uppercase tracking-[4px] text-[#FFFFFF] mb-4">
             Modern Project & Portfolio Management
           </p>
 
@@ -258,7 +258,7 @@ using the power of these enterprise solutions.
             </span>
           </h2>
 
-          <p className="text-gray-400 text-sm md:text-base max-w-4xl mx-auto mt-5 leading-7">
+          <p className="text-[#FFFFFF] text-sm md:text-base max-w-4xl mx-auto mt-5 leading-7">
             Implementing modern Project and Portfolio Management (PPM)
             practices can yield several transformative benefits for
             organizations.
@@ -362,7 +362,7 @@ individual projects, influencing the organization’s overall efficiency, compet
                   <div className="flex gap-3 items-start">
                     <span className="w-2 h-2 rounded-full bg-[#ff403a] mt-3"></span>
 
-                    <p className="text-gray-300 leading-8">
+                    <p className="text-[#FFFFFF] leading-8">
                       {item.description}
                     </p>
                   </div>
@@ -373,7 +373,7 @@ individual projects, influencing the organization’s overall efficiency, compet
                       <div className="flex gap-3 items-start">
                         <span className="w-2 h-2 rounded-full bg-[#ff403a] mt-3"></span>
 
-                        <p className="text-gray-400 leading-8 text-sm">
+                        <p className="text-[#FFFFFF] leading-8 text-sm">
                           {item.extra}
                         </p>
                       </div>

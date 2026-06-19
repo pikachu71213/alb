@@ -25,7 +25,7 @@ export default function BannerSlider() {
   }, []);
 
   return (
-    <section className="relative w-full h-[140px] lg:h-[600px] overflow-hidden">
+    <section className="relative w-full h-[140px] lg:h-[600px] overflow-hidden mt-7">
       
       {/* Slider Track */}
       <div

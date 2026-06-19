@@ -234,7 +234,7 @@ const [openIndex, setOpenIndex] = useState(null);
             What <span className="text-[#ff403a]">We Do</span>
           </h2>
 
-          <p className="text-gray-300 text-xl md:text-2xl mt-3 ">
+          <p className="text-[#FFFFFF] text-xl md:text-2xl mt-3 ">
             Smart Solutions,{" "}
             <span className="text-[#ff403a]">Measurable Results</span>
           </p>
@@ -343,7 +343,7 @@ const [openIndex, setOpenIndex] = useState(null);
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
       </div>
 
-      <p className="text-[16px] md:text-[20px] uppercase tracking-[0.2em] text-gray-400 mb-2">
+      <p className="text-[16px] md:text-[20px] uppercase tracking-[0.2em] text-[#FFFFFF] mb-2">
         Questions Are Normal
       </p>
 
@@ -370,7 +370,7 @@ const [openIndex, setOpenIndex] = useState(null);
         Why Albatroz <span className="text-[#ff3b30]">Solutions</span> ?
       </h2>
 
-      <p className="text-sm md:text-base font-medium text-gray-300 mb-8">
+      <p className="text-sm md:text-base font-medium text-[#FFFFFF] mb-8">
         Purpose-driven solutions.
         <span className="text-[#ff3b30]"> Built around you.</span>
       </p>
@@ -525,7 +525,7 @@ the focus of everything.
               <span className="text-[#ff403a]">Solutions</span>
             </h2>
 
-            <p className="text-gray-400 mb-8">
+            <p className="text-[#FFFFFF] mb-8">
               Purpose-driven solutions. Built around you.
             </p>
 
@@ -552,7 +552,7 @@ the focus of everything.
 
             
             <div className="mt-8">
-              <p className="text-gray-400 uppercase tracking-widest text-sm">
+              <p className="text-[#FFFFFF] uppercase tracking-widest text-sm">
                 Delivering Solutions
               </p>
 

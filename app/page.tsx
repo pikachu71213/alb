@@ -276,7 +276,7 @@ visibility and control.
       </h2>
 
 
-      <p className="mt-6 max-w-xl text-base leading-relaxed text-gray-300 md:text-lg">
+      <p className="mt-6 max-w-xl text-base leading-relaxed text-[#FFFFFF] md:text-lg">
         As An Esteemed IT Services Firm Founded In 2018,
         We Bridge The Gap Between Exceptional Technical
         Execution And Cost-Effective Services For Enterprise
@@ -305,7 +305,7 @@ visibility and control.
               {item.suffix}
             </h3>
 
-            <p className="mt-2 text-sm text-gray-400">
+            <p className="mt-2 text-sm text-[#FFFFFF]">
               {item.label}
             </p> */}
 

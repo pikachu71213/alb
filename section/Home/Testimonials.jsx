@@ -144,7 +144,7 @@ function TestimonialSlider() {
               {/* CONTENT */}
               <div className="ml-12 pt-2">
 
-                <p className="text-gray-300 leading-relaxed text-sm md:text-base transition-all duration-700">
+                <p className="text-[#FFFFFF] leading-relaxed text-sm md:text-base transition-all duration-700">
                   {testimonials[current].text}
                 </p>
 
@@ -155,11 +155,11 @@ function TestimonialSlider() {
                     ({testimonials[current].name})
                   </h3>
 
-                  <p className="text-gray-400 text-sm mt-2">
+                  <p className="text-[#FFFFFF] text-sm mt-2">
                     {testimonials[current].role}
                   </p>
 
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-[#FFFFFF] text-sm">
                     {testimonials[current].region}
                   </p>
 

@@ -50,13 +50,13 @@ Get Started
       Join Our <span className='text-[#FF403A]'> Team! </span>
     </h2>
 
-    <p className="mt-6 text-[20px] leading-8 text-gray-300">
+    <p className="mt-6 text-[20px] leading-8 text-[#FFFFFF]">
      Come join our vibrant professional services team if you have a niche for consulting & enjoy working closely with
 customers in solving their business problems.
     </p>
 
     {/* PARAGRAPH 2 */}
-    <p className="mt-4 text-[20px] leading-8 text-gray-300">
+    <p className="mt-4 text-[20px] leading-8 text-[#FFFFFF]">
       Albatroz's truly flexible work culture, challenging opportunities to learn & grow in a startup environment is what
 we are known for. If this resonates with you, hit us with your resume for the openings listed.
     </p>

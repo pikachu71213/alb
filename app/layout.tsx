@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Albtros",
+  title: "Albatroz",
   description: "asdfsdf",
 };
 

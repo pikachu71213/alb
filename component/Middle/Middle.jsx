@@ -342,10 +342,10 @@ const [openIndex, setOpenIndex] = useState(null);
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
       </div>
-
+{/* 
       <p className="text-[16px] md:text-[20px] uppercase tracking-[0.2em] text-[#FFFFFF] mb-2">
         Questions Are Normal
-      </p>
+      </p> */}
 
       <h3 className="text-xl md:text-[30px] font-semibold tracking-wide uppercase mb-1">
         Delivering Solutions

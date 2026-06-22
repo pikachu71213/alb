@@ -40,17 +40,16 @@ export default function ContactSection() {
             <div className="flex  items-center gap-4">
               <a 
                 href="#book-call" 
-                className="inline-flex items-center gap-3 bg-white text-[#ff3b30] font-bold px-6 py-3 rounded-xl transition-all duration-200 hover:bg-neutral-100 shadow-md text-sm md:text-base"
+                className="inline-flex items-center gap-3 bg-white text-[#ff3b30] font-bold px-6 py-3 rounded-xl transition-all duration-200 whitespace-nowrap hover:bg-neutral-100 shadow-md text-[12px] md:text-sm md:text-base"
               >
-                <PhoneCall className="w-5 h-5 fill-[#ff3b30]" />
+                <PhoneCall className="w-5 h-5 fill-[#ff3b30] " />
                 Call Us
               </a>
-              
               <a
   href="https://wa.me/your-number"
   target="_blank"
   rel="noopener noreferrer"
-  className="inline-flex items-center gap-3 bg-transparent text-white font-bold px-6 py-3 rounded-xl border border-gray-600 hover:border-gray-400 hover:bg-neutral-900/30 transition-all duration-200 text-sm md:text-base"
+  className="inline-flex items-center gap-3 bg-transparent text-white font-bold px-6 py-3 rounded-xl border border-gray-600 hover:border-gray-400 hover:bg-neutral-900/30 transition-all duration-200 text-[12px] md:text-sm md:text-base"
 >
   <FaWhatsapp className="w-7 h-7 text-[#25D366] whitespace-nowrap" />
 WhatsApp

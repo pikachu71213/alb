@@ -137,7 +137,7 @@ export default function Home() {
 
   return (
    <>
-   <Nav />
+  
    <BannerSlider /> 
     {/* <section className="bg-[#000000] py-16 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
@@ -333,7 +333,7 @@ visibility and control.
     
 <Middle />
 <Abovefooter />
-<Footer />
+
    </>
   );
 }

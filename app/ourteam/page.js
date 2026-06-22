@@ -44,45 +44,28 @@ import Footer from "@/component/Footer/Footer"
 function page() {
   return (
     <div>
-      <Nav />
-             <section className="bg-[#000000] py-16 px-6">
-           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
-     
-             {/* Left Side */}
-             <div className="w-full ">
-               <h2 className="text-3xl md:text-[45px] font-bold text-[#FFFFFF] mb-4">
-                 Built to Bring Structure <span className="text-[#FF403A]"> <br /> 
-     to Complex Work</span>
-               </h2>
-     
-               <p className="text-[20px] text-[#FFFFFF] mb-6">
-                 We help organizations manage projects, streamline
-     processes, and make better decisions through clear
-     systems and practical execution.
-               </p>
-               <p className="text-[#FFFFFF] text-upercase text-[24px]">Talk to Our Team</p>
-               <button className="px-6 py-3 bg-[#FF403A] transition text-[#FFFFFF] text-[25px] font-semibold cursor-pointer">
-     Get Started
-               </button>
-             </div>
-     
-             {/* Right Side */}
-             <div className="w-full flex justify-center">
-               <img
-                 src="/images/abt.png"
-                 alt="Contact"
-                 className="rounded-xl shadow-lg w-full  object-cover"
-               />
-             </div>
-     
-           </div>
-         </section>
-         <Number />  
-     <section className="w-full py-10 bg-black">
-      
+       <section className="relative h-[300px] md:h-[450px] overflow-hidden mt-20">
+      {/* Background Image */}
+      <img
+        src="/images/ot.png"
+        alt="About Us"
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+
+      {/* Dark Overlay */}
+
+      {/* Content */}
+      <div className="absolute inset-0 flex items-center px-6 md:px-16">
+        <h1 className="text-white text-3xl md:text-[45px] font-semibold ">
+          Our <span className="text-[#FF403A]">Team</span>
+        </h1>
+      </div>
+    </section>
+     <section className="w-full pt-12 bg-black">
       <div className="max-w-7xl mx-auto px-4">      
-        <h2 className="text-[45px] text-center text-white font-semibold mb-16">
-          Our Leadership Team
+        <h2 className="text-3xl md:text-[45px] text-center text-white font-semibold mb-6">
+          Our Leadership <span className="text-[#FF403A]">Team</span>
         </h2>
         <div className="flex flex-col gap-20">
 
@@ -111,15 +94,15 @@ function page() {
               {/* CONTENT */}
               <div className="flex flex-col justify-center">
                 
-                <h2 className="text-[30px] font-semibold text-white leading-tight">
+                <h2 className="text-[25px] md:text-[30px] font-semibold text-white leading-tight">
                   {leader.name}
                 </h2>
 
-                <h4 className="mt-4 text-[20px] font-semibold text-[#FF403A]">
+                <h4 className="my-3 text-[17px] md:text-[20px] font-semibold text-[#FF403A]">
                   {leader.role}
                 </h4>
 
-                <p className="mt-4 text-white text-[18px] leading-8">
+                <p className="text-white text-[14px] md:text-[18px] leading-8">
                   {leader.description}
                 </p>
 
@@ -145,7 +128,7 @@ function page() {
       </div>
 
     </section>    
-    <Footer />
+   
     </div>
   )
 }

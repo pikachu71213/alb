@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from "@/component/Nav/Nav"
+
 import Number from "@/component/Number/Number"
 import Footer from "@/component/Footer/Footer"
 
@@ -8,11 +8,27 @@ import Footer from "@/component/Footer/Footer"
 function page() {
   return (
     <div>
-        <Nav />
-        <section className="bg-[#000000] py-16 px-6">
+       <section className="relative h-[300px] md:h-[450px] overflow-hidden mt-20">
+      {/* Background Image */}
+      <img
+        src="/images/abtt.png"
+        alt="About Us"
+        className="w-full h-full object-cover"
+      />
+
+      {/* Dark Overlay */}
+
+      {/* Content */}
+      <div className="absolute inset-0 flex items-center px-6 md:px-16">
+        <h1 className="text-white text-3xl md:text-[45px] font-semibold ">
+          About <span className="text-[#FF403A]">Us</span>
+        </h1>
+      </div>
+    </section>
+        {/* <section className="bg-[#000000] py-16 px-6">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
 
-        {/* Left Side */}
+      
         <div className="w-full ">
           <h2 className="text-3xl md:text-[45px] font-bold text-[#FFFFFF] mb-4">
             Built to Bring Structure <span className="text-[#FF403A]"> <br /> 
@@ -30,7 +46,7 @@ Get Started
           </button>
         </div>
 
-        {/* Right Side */}
+      
         <div className="w-full flex justify-center">
           <img
             src="/images/abt.png"
@@ -40,9 +56,9 @@ Get Started
         </div>
 
       </div>
-    </section>
-    <Number />
-    <section className="w-full bg-black py-20 px-4">
+    </section> */}
+    {/* <Number /> */}
+    <section className="w-full bg-black pt-18 px-4">
 
   <div className="max-w-6xl mx-auto">
 
@@ -59,17 +75,15 @@ Get Started
 
       </div>
 
-      {/* CONTENT */}
       <div>
 
-        {/* SMALL TEXT */}
-        <p className="text-[#FFFFFF] text-[20px] mb-5">
+        <p className="text-[#FFFFFF] text-[14px] md:text-[20px]">
           Albatroz
           <span className="text-[#FF403A]">solutions</span>
         </p>
 
         {/* HEADING */}
-        <h2 className="text-white text-[32px] font-semibold leading-tight">
+        <h2 className="text-white py-2 text-3xl md:text-[32px] font-semibold leading-tight">
           Business Outcomes.
           <span className="text-[#FF403A]">
             {" "}Delivered.
@@ -78,7 +92,7 @@ Get Started
         </h2>
 
         {/* DESCRIPTION */}
-        <p className="text-[#FFFFFF] text-[18px] leading-relaxed mt-8 max-w-xl">
+        <p className="text-[#FFFFFF] text-[14px] md:text-[18px] leading-relaxed  max-w-xl">
 Albatroz Solutions is a specialized IT consulting firm dedicated to
 helping enterprises unlock the full value of their software investments
 — through expert implementation, deep domain knowledge, and a
@@ -93,7 +107,7 @@ relentless focus on outcomes.
   </div>
 
 </section>
-<section className="w-full bg-black py-24 px-4 overflow-hidden">
+<section className="w-full bg-black pt-14 md:pt-18 px-4 overflow-hidden">
 
   <div className="max-w-7xl mx-auto">
 
@@ -102,7 +116,7 @@ relentless focus on outcomes.
       {/* LEFT SIDE */}
       <div>
 
-        <h2 className="text-white text-[45px] leading-[1.2] font-semibold">
+        <h2 className="text-white text-3xl md:text-[45px] leading-[1.2] font-semibold">
 
           Our Mission &
           <br />
@@ -131,7 +145,7 @@ relentless focus on outcomes.
         <div className="relative flex flex-col sm:flex-row items-start gap-8 mb-10">
 
           {/* ICON */}
-          <div className="relative z-10 min-w-[105px] h-[105px] rounded-full bg-[#ECECEC] flex  items-center justify-center">
+          <div className="relative z-10 min-w-[105px] -mr-[85px] ml-0 lg:ml-[20px] -mb-5 md:mb-0 -mt-[2px] h-[105px] rounded-full bg-[#ECECEC] flex  items-center justify-center">
 
             <img
               src="images/ma.svg"
@@ -142,9 +156,9 @@ relentless focus on outcomes.
           </div>
 
           {/* CONTENT */}
-          <div className="bg-[#111111] rounded-[18px] px-10 py-8 flex-1">
+          <div className="bg-[#111111] rounded-[18px] p-7 lg:p-15 flex-1">
 
-            <h3 className="text-[32px] font-semibold leading-none text-white">
+            <h3 className=" text-[25px] md:text-[32px] font-semibold leading-none text-white">
 
               Our
               <span className="text-[#FF403A]">
@@ -153,7 +167,7 @@ relentless focus on outcomes.
 
             </h3>
 
-            <p className="text-[#D5D5D5] text-[20px] leading-[1.8] mt-5 max-w-4xl">
+            <p className="text-[#D5D5D5] text-[14px] md:text-[20px] leading-[1.8] mt-5 max-w-4xl">
 
               To Deliver Exceptional Services And Solutions That
               Empower Organizations To Optimize The Value
@@ -177,7 +191,7 @@ relentless focus on outcomes.
     <div className="relative flex flex-col sm:flex-row items-start gap-8">
 
           {/* ICON */}
-          <div className="relative z-10 min-w-[105px] h-[105px] rounded-full bg-[#ECECEC] flex items-center justify-center">
+          <div className="relative z-10 min-w-[105px] -mr-[85px] ml-0 lg:ml-[20px] -mb-5 md:mb-0 -mt-[2px] h-[105px] rounded-full bg-[#ECECEC] flex  items-center justify-center">
 
             <img
               src="images/ma1.svg"
@@ -188,9 +202,9 @@ relentless focus on outcomes.
           </div>
 
           {/* CONTENT */}
-          <div className="bg-[#111111] rounded-[18px] px-10 py-8 flex-1">
+          <div className="bg-[#111111] rounded-[18px]  p-7 lg:p-15  flex-1">
 
-            <h3 className="text-[32px] font-semibold leading-none text-white">
+            <h3 className=" text-[25px] md:text-[32px] font-semibold leading-none text-white">
 
               Our
               <span className="text-[#FF403A]">
@@ -199,7 +213,7 @@ relentless focus on outcomes.
 
             </h3>
 
-            <p className="text-[#D5D5D5] text-[20px] leading-[1.8] mt-5">
+            <p className="text-[#D5D5D5] text-[14px] md:text-[20px] leading-[1.8] mt-5">
 
               We Don’t Implement Software In Isolation. We Work To
               Understand Your Organization’s Objectives, Processes,
@@ -212,7 +226,7 @@ relentless focus on outcomes.
 
             </p>
 
-            <p className="text-[#D5D5D5] text-[20px] leading-[1.8] mt-6">
+            <p className="text-[#D5D5D5]  text-[14px] md:text-[20px] leading-[1.8] mt-6">
 
               Whether Its A New Implementation, Enhancement,
               Ongoing Support, Or Strategic Consulting For A Key
@@ -228,14 +242,14 @@ relentless focus on outcomes.
   </div>
 
 </section>
-<section className="w-full bg-black py-24 px-4 overflow-hidden">
+<section className="w-full bg-black py-14 md:py-18 px-4 overflow-hidden">
 
   <div className="max-w-7xl mx-auto">
 
     {/* HEADING */}
-    <div className="text-center mb-16">
+    <div className="text-center mb-2">
 
-      <h2 className="text-white text-[45px] font-semibold">
+      <h2 className="text-white text-3xl md:text-[45px] font-semibold">
 
         About
         <span className="text-[#FF403A]">
@@ -252,7 +266,7 @@ relentless focus on outcomes.
     {/* TOP DESCRIPTION */}
     <div className="max-w-7xl mx-auto mb-5">
 
-      <p className="text-[#E5E5E5] text-[18px]  text-left">
+      <p className="text-[#E5E5E5] text-[14px] md:text-[20px]  text-left">
 
         Established in 2018, Albatroz Solutions is an esteemed
         IT services firm that excels in offering consultation,
@@ -275,7 +289,7 @@ relentless focus on outcomes.
       {/* LEFT SIDE */}
       <div className="space-y-5 ">
 
-        <p className="text-[#E5E5E5] text-left text-[18px] ">
+        <p className="text-[#E5E5E5] text-left text-[14px] md:text-[18px] ">
 
           At Albatroz Solutions, we recognize that successful
           software implementation extends beyond the realm of
@@ -290,7 +304,7 @@ relentless focus on outcomes.
 
         </p>
 
-        <p className="text-[#E5E5E5] text-left text-[18px] ">
+        <p className="text-[#E5E5E5] text-left text-[14px] md:text-[20px] ">
 
           Our specialization lies in delivering top-notch
           services for renowned software platforms including
@@ -330,7 +344,7 @@ relentless focus on outcomes.
   </div>
 
 </section>
-<section
+{/* <section
   className="w-full py-24 px-4 bg-cover bg-center bg-no-repeat relative overflow-hidden"
   style={{
     backgroundImage:
@@ -338,12 +352,12 @@ relentless focus on outcomes.
   }}
 >
 
-  {/* DARK OVERLAY */}
+
   <div className="absolute inset-0 bg-black/80"></div>
 
   <div className="max-w-6xl mx-auto relative z-10">
 
-    {/* HEADING */}
+   
     <div className="text-center mb-16">
 
       <h2 className="text-white text-5xl md:text-6xl font-semibold">
@@ -367,13 +381,13 @@ relentless focus on outcomes.
 
     </div>
 
-    {/* CARDS */}
+   
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-      {/* CARD 1 */}
+     
       <div className="border border-[#4B4B4B] rounded-[20px] p-8 bg-black/40 backdrop-blur-sm hover:border-[#FF403A] transition-all duration-500">
 
-        {/* ICON */}
+        
         <div className="w-16 h-16 rounded-xl bg-white flex items-center justify-center mb-6">
 
           <svg
@@ -402,10 +416,10 @@ relentless focus on outcomes.
 
       </div>
 
-      {/* CARD 2 */}
+   
       <div className="border border-[#4B4B4B] rounded-[20px] p-8 bg-black/40 backdrop-blur-sm hover:border-[#FF403A] transition-all duration-500">
 
-        {/* ICON */}
+       
         <div className="w-16 h-16 rounded-xl bg-white flex items-center justify-center mb-6">
 
           <svg
@@ -438,10 +452,10 @@ relentless focus on outcomes.
 
       </div>
 
-      {/* CARD 3 */}
+  
       <div className="border border-[#4B4B4B] rounded-[20px] p-8 bg-black/40 backdrop-blur-sm hover:border-[#FF403A] transition-all duration-500">
 
-        {/* ICON */}
+      
         <div className="w-16 h-16 rounded-xl bg-white flex items-center justify-center mb-6">
 
           <svg
@@ -470,10 +484,9 @@ relentless focus on outcomes.
 
       </div>
 
-      {/* CARD 4 */}
       <div className="border border-[#4B4B4B] rounded-[20px] p-8 bg-black/40 backdrop-blur-sm hover:border-[#FF403A] transition-all duration-500">
 
-        {/* ICON */}
+     
         <div className="w-16 h-16 rounded-xl bg-white flex items-center justify-center mb-6">
 
           <svg
@@ -510,8 +523,8 @@ relentless focus on outcomes.
 
   </div>
 
-</section>
-<Footer />
+</section> */}
+
     </div>
   )
 }

@@ -107,56 +107,57 @@ function Nav() {
           </li>
 
           {/* Solutions Dropdown */}
-          <li className="relative">
-            <button
-              type="button"
-              onClick={() => setShowSolutions(!showSolutions)}
-              className="flex items-center gap-1 hover:text-[#ff403a] transition-colors duration-200 cursor-pointer"
-            >
-              Solutions
+        {/* Solutions Dropdown */}
+<li
+  className="relative"
+  onMouseEnter={() => setShowSolutions(true)}
+  onMouseLeave={() => setShowSolutions(false)}
+>
+  <button
+    type="button"
+    className="flex items-center gap-1 hover:text-[#ff403a] transition-colors duration-200 cursor-pointer"
+  >
+    Solutions
 
-              <ChevronDownIcon
-                size={16}
-                className={`transition-transform duration-300 ${
-                  showSolutions ? "rotate-180" : ""
-                }`}
-              />
-            </button>
+    <ChevronDownIcon
+      size={16}
+      className={`transition-transform duration-300 ${
+        showSolutions ? "rotate-180" : ""
+      }`}
+    />
+  </button>
 
-            {showSolutions && (
-              <ul className="absolute md:left-0 left-1/2 md:translate-x-0 -translate-x-1/2 md:top-full top-10 mt-2 w-56 bg-black rounded-lg shadow-xl overflow-hidden z-[9999]">
-                <li>
-                  <Link
-                    href="/web-development"
-                    className="block px-4 py-3 text-[#ff403a] hover:bg-gray-100"
-                    onClick={() => setShowSolutions(false)}
-                  >
-                    Project & Portfolio Management
-                  </Link>
-                </li>
+  {showSolutions && (
+    <ul className="absolute top-full left-0 mt-0 w-72 bg-black border border-[#ff403a] rounded-lg shadow-xl overflow-hidden z-[9999]">
+      <li>
+        <Link
+          href="/web-development"
+          className="block px-4 py-3 bg-black text-[#ff403a] hover:text-white transition-all duration-300"
+        >
+          Project & Portfolio Management
+        </Link>
+      </li>
 
-                <li>
-                  <Link
-                    href="/app-development"
-                    className="block px-4 py-3 text-[#ff403a] hover:bg-gray-100"
-                    onClick={() => setShowSolutions(false)}
-                  >
-                    Enterprise IT Automation
-                  </Link>
-                </li>
+      <li>
+        <Link
+          href="/app-development"
+          className="block px-4 py-3 bg-black text-[#ff403a] hover:text-white transition-all duration-300"
+        >
+          Enterprise IT Automation
+        </Link>
+      </li>
 
-                <li>
-                  <Link
-                    href="/digital-marketing"
-                    className="block px-4 py-3 text-[#ff403a] hover:bg-gray-100"
-                    onClick={() => setShowSolutions(false)}
-                  >
-                    AI Services for Enterprise
-                  </Link>
-                </li>
-              </ul>
-            )}
-          </li>
+      <li>
+        <Link
+          href="/digital-marketing"
+          className="block px-4 py-3 bg-black text-[#ff403a] hover:text-white transition-all duration-300"
+        >
+          AI Services for Enterprise
+        </Link>
+      </li>
+    </ul>
+  )}
+      </li>
 
           {/* Careers */}
           <li>

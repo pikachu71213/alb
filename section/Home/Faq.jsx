@@ -56,7 +56,7 @@ function FAQSection() {
           {/* LEFT SIDE */}
           <div className="flex flex-col items-center lg:items-center">
 
-           <h2 className="text-white text-3xl md:text-[45px] font-semibold leading-tight mt-0 md:mt-0 mb-7">
+           <h2 className="text-white text-3xl md:text-[40px] font-semibold leading-tight mt-0 md:mt-0 mb-7">
   Frequently 
   <br className="hidden md:block" /> 
   

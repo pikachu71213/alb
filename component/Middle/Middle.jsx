@@ -230,7 +230,7 @@ const [openIndex, setOpenIndex] = useState(null);
         
         {/* HEADING */}
         <div className="text-center mb-8 md:mb-10">
-          <h2 className="text-4xl md:text-[45px] font-semibold text-white">
+          <h2 className="text-4xl md:text-[40px] font-semibold text-white">
             What <span className="text-[#ff403a]">We Do</span>
           </h2>
 
@@ -286,7 +286,7 @@ const [openIndex, setOpenIndex] = useState(null);
   <div className="mx-auto text-center">
 
     {/* Title */}
-    <h2 className="text-3xl md:text-[45px] font-semibold tracking-tight mb-0 md:mb-4">
+    <h2 className="text-3xl md:text-[40px] font-semibold tracking-tight mb-0 md:mb-4">
       Partnership Built <span className="text-[#FF3B30]">On Trust</span>
     </h2>
 
@@ -520,7 +520,7 @@ the focus of everything.
        
           <div>
            
-            <h2 className="text-[45px] font-semibold text-white mb-3">
+            <h2 className="text-[40px] font-semibold text-white mb-3">
               Why Albatroz{" "}
               <span className="text-[#ff403a]">Solutions</span>
             </h2>
@@ -571,9 +571,8 @@ the focus of everything.
    <section className="w-full bg-black py-10 pb-4 md:pb-10 overflow-hidden">
   <div className="max-w-7xl mx-auto px-4">
 
-    {/* HEADING */}
     <div className="text-center">
-      <h2 className="text-3xl mb-8 md:mb-10 md:text-[45px] font-semibold text-white">
+      <h2 className="text-3xl mb-8 md:mb-10 md:text-[40px] font-semibold text-white">
         How We <span className="text-[#ff403a]">Work</span>
       </h2>
     </div>
@@ -626,7 +625,7 @@ the focus of everything.
                 {/* TEXT */}
                 <div className="flex-1 mt-3 md:mt-0">
 
-                  <h3 className="text-white text-2xl md:text-[40px] font-semibold flex items-center -pb-5 gap-1 md:gap-2">
+                  <h3 className="text-white text-2xl md:text-[32px] font-semibold flex items-center -pb-5 gap-1 md:gap-2">
                     <span className={item.text}>
                       {item.number}
                     </span>

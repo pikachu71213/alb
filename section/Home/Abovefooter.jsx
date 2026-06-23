@@ -139,7 +139,7 @@ const certifications = [
 
     {/* HEADING */}
     <div className="text-center">
-      <h2 className="text-3xl mb-8 md:mb-10 md:text-[45px] font-semibold text-white">
+      <h2 className="text-3xl mb-8 md:mb-10 md:text-[40px] font-semibold text-white">
         Certifications &{" "}
         <span className="text-[#FF403A]">Accreditations</span>
       </h2>
@@ -204,6 +204,5 @@ const certifications = [
     </div>
   );
 }
-
 
 export default Abovefooter;

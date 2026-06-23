@@ -59,7 +59,7 @@ function BlogSlider() {
 
         {/* HEADING */}
         <div className="text-center mb-10">
-          <h2 className="text-white text-3xl md:text-[45px] font-bold">
+          <h2 className="text-white text-3xl md:text-[40px] font-bold">
             Our <span className="text-[#ff403a]">Blogs</span>
           </h2>
         </div>

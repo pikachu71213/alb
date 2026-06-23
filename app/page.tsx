@@ -144,7 +144,7 @@ export default function Home() {
 
    
         <div className="w-full ">
-          <h2 className="text-3xl md:text-[45px] font-bold text-[#FFFFFF] mb-4">
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#FFFFFF] mb-4">
             Ready to bring meaningful, <span className="text-[#FF403A]"><br />  
 secure AI into your PMO? </span>
           </h2>
@@ -178,7 +178,7 @@ Get my AI readiness report
       />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
-        <h2 className="text-3xl md:text-[45px] font-semibold text-[#FFFFFF]">
+        <h2 className="text-3xl md:text-[40px] font-semibold text-[#FFFFFF]">
           Plan Smarter. Deliver Faster.
           <span className="text-[#FF403A]"> Automate Everything.</span>
         </h2>
@@ -267,11 +267,11 @@ visibility and control.
     {/* Content */}
     <div className="relative z-10 max-w-3xl">
 
-      <h2 className="text-3xl font-semibold text-white md:text-[45px]">
+      <h2 className="text-3xl font-semibold text-white md:text-[40px]">
         An Established Partner.
       </h2>
 
-      <h2 className="mt-3 text-3xl font-semibold text-[#FF403A] md:text-[45px]">
+      <h2 className="mt-3 text-3xl font-semibold text-[#FF403A] md:text-[40px]">
         A Strategic Cost Advantage.
       </h2>
 

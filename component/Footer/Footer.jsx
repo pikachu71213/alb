@@ -1,119 +1,232 @@
-import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import React from "react";
+import Link from "next/link";
+
+const InstagramIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const FacebookIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
+
+const LinkedInIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect x="2" y="9" width="4" height="12" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+const XIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
+
+const LocationIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
+  </svg>
+);
+
+const PhoneIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
+  </svg>
+);
+
+const EmailIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+  </svg>
+);
+
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Our Teams", href: "/ourteam" },
+  { label: "Careers", href: "/career" },
+  { label: "News & Events", href: "/Blog" },
+  { label: "Blogs", href: "/Blog" },
+];
+
+const otherLinks = [
+  { label: "Project Prortfolio Management", href: "/project-management" },
+  { label: "Enterprise Automation", href: "/project" },
+  { label: "Project Management as a Service", href: "/project-management" },
+  { label: "Clarity", href: "/project" },
+  { label: "Enterprise Automation", href: "/project" },
+  { label: "Automic Automation", href: "/project" },
+  { label: "Stonebranch UAC", href: "/project" },
+];
+
+function FooterLink({ href, children }) {
+  return (
+    <Link
+      href={href}
+      className="text-[14px] text-[#bbbbbb] transition-colors duration-200 hover:text-[#ff403a]"
+    >
+      {children}
+    </Link>
+  );
+}
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white font-sans selection:bg-[#ff3b30]">
-      {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-6 md:py-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
-          {/* Column 1: Logo Brand Area (4 columns wide) */}
-          <div className="lg:col-span-4 flex flex-col justify-start">
-            <div className="flex items-center gap-3">
-              {/* Custom Designed Inline Albatroz Logo Graphic */}
-              <div className="relative  flex items-center justify-center">
-               
-              </div>
-              <div className="leading-tight ">
-                <img src="/images/nla.svg" alt="dsdsds" className=""  />
-              </div>
-            </div>
-          </div>
+    <footer className="relative w-full overflow-hidden bg-black text-[#bbbbbb] selection:bg-[#ff403a]">
+      {/* Diagonal red streak background */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-40"
+        aria-hidden
+        style={{
+          backgroundImage: `
+            linear-gradient(118deg, transparent 30%, rgba(229, 57, 53, 0.14) 42%, transparent 54%),
+            linear-gradient(118deg, transparent 55%, rgba(229, 57, 53, 0.1) 62%, transparent 70%),
+            linear-gradient(118deg, transparent 72%, rgba(229, 57, 53, 0.08) 78%, transparent 85%)
+          `,
+        }}
+      />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#ff403a]/[0.04] via-transparent to-transparent" aria-hidden />
 
-          {/* Column 2: Quick Links (2 columns wide) */}
-          <div className="lg:col-span-2">
-            <h4 className="text-xl font-bold tracking-wide mb-6 text-white">Quick Links</h4>
-            <ul className="space-y-2 text-[#FFFFFF] text-sm font-medium">
-              {['About Us', 'Solution', 'Services', 'Prebuilt Plugins', 'Careers', 'Blogs'].map((link) => (
-                <li key={link}>
-                  <a href={`#${link.toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-[#ff3b30] transition-colors duration-200">
-                    {link}
-                  </a>
+      <div className="relative z-10">
+        {/* Logo section */}
+        <div className="mx-auto max-w-[1400px] px-6 py-6 md:px-12 lg:px-16">
+          <Link href="/" className="inline-flex flex-col gap-2 transition-opacity hover:opacity-90">
+            <img
+              src="/images/nla.svg"
+              alt="Albatroz Solutions"
+              className="h-[50px] w-auto md:h-[58px]"
+            />
+            <p className="pl-[3px] text-[11px] tracking-wide">
+              <span className="text-[#e53935]">Business Outcomes.</span>{" "}
+              <span className="text-white">Delivered.</span>
+            </p>
+          </Link>
+        </div>
+
+        <div className="h-px w-full bg-[#333333]" />
+
+        {/* Main content */}
+        <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 px-6 py-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12 md:px-12 lg:px-16 lg:py-10">
+          {/* Quick Links */}
+          <div>
+            <h3 className="mb-4 text-[16px] font-bold text-white">Quick Links</h3>
+            <ul className="space-y-2.5">
+              {quickLinks.map((link) => (
+                <li key={link.label}>
+                  <FooterLink href={link.href}>{link.label}</FooterLink>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 3: Reach Us (3 columns wide) */}
-          <div className="lg:col-span-3">
-            <h4 className="text-xl font-bold tracking-wide mb-6 text-white">Reach Us</h4>
-            <ul className="space-y-2 text-[#FFFFFF] text-sm font-medium">
-              <li className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-[#ff3b30] mt-0.5 flex-shrink-0" />
-                <span className="leading-snug text-[#FFFFFF]">+91 93848 12035 / 93848 12039</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-[#ff3b30] flex-shrink-0" />
-                <a href="mailto:info@albatrozsolutions.com" className="hover:text-[#ff3b30] transition-colors text-[#FFFFFF]">
-                  info@albatrozsolutions.com
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#ff3b30] mt-0.5 flex-shrink-0" />
-                <span className="leading-relaxed text-[#FFFFFF]">
-                  DC-43, Development Center, 4th Floor,<br />
-                  TIDEL Park, ELCOSEZ, Civil Aerodrome Post,<br />
-                  Coimbatore, Tamil Nadu - 641014
-                </span>
-              </li>
+          {/* Other Links */}
+          <div>
+            <h3 className="mb-4 text-[16px] font-bold text-white">Other Links</h3>
+            <ul className="space-y-2.5">
+              {otherLinks.map((link, index) => (
+                <li key={`${link.label}-${index}`}>
+                  <FooterLink href={link.href}>{link.label}</FooterLink>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Column 4: Follow on Us & Location Map Preview (3 columns wide) */}
-          <div className="lg:col-span-3 flex flex-col">
-            <h4 className="text-xl font-bold tracking-wide mb-4 text-white">Follow on Us</h4>
-            
-            {/* Custom SVG Social Grid Layout matching screenshot brand styles */}
-            <div className="flex items-center gap-5 mb-6 text-[#FFFFFF]">
-              {/* Instagram */}
-              <a href="#instagram" className="hover:text-[#ff3b30] text-[#FFFFFF] transition-colors">
-                <svg className="w-5 h-5 fill-none stroke-current" strokeWidth="2" viewBox="0 0 24 24">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-              </a>
-              {/* Facebook */}
-              <a href="#facebook" className="hover:text-[#ff3b30] text-[#FFFFFF] transition-colors">
-                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M9 8H7v3h2v9h3v-9h3l.5-3H12V6c0-.5.5-1 1-1h2V2h-3a4 4 0 0 0-4 4v2z" />
-                </svg>
-              </a>
-              {/* LinkedIn */}
-              <a href="#linkedin" className="hover:text-[#ff3b30] text-[#FFFFFF] transition-colors">
-                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                </svg>
-              </a>
-              {/* X / Twitter */}
-              <a href="#x" className="hover:text-[#ff3b30] text-[#FFFFFF] transition-colors">
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
+          {/* Contact Us */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <h3 className="mb-4 text-[16px] font-bold text-white">Contact Us</h3>
+
+            <div className="mb-3.5 flex items-start gap-3">
+              <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#e53935] text-white">
+                <LocationIcon />
+              </span>
+              <span className="text-[14px] leading-relaxed text-[#bbbbbb]">
+                DC-43, Development Center, 4th Floor,
+                <br />
+                TIDEL Park, ELCOSEZ, Civil Aerodrome Post,
+                <br />
+                Coimbatore, Tamil Nadu – 641014
+              </span>
+            </div>
+
+            <div className="mb-3.5 flex items-center gap-3">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#e53935] text-white">
+                <PhoneIcon />
+              </span>
+              <a
+                href="tel:+919384812035"
+                className="text-[14px] text-[#bbbbbb] transition-colors hover:text-[#ff403a]"
+              >
+                +91 93848 12035/93848 12039
               </a>
             </div>
 
-            {/* Map Preview Container Component Box */}
-            <div className="w-full h-24 rounded-xl overflow-hidden relative border border-neutral-800 bg-neutral-900 group cursor-pointer">
-              <img 
-                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=300&q=80" 
-                alt="Map Snapshot Placeholder" 
-                className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-300"
-              />
-              {/* Mock Map Marker Dot */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                <div className="w-3 h-3 rounded-full bg-[#ff3b30] animate-ping absolute"></div>
-                <div className="w-3 h-3 rounded-full bg-[#ff3b30] relative z-10 border border-white"></div>
-              </div>
+            <div className="mb-6 flex items-center gap-3">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#e53935] text-white">
+                <EmailIcon />
+              </span>
+              <a
+                href="mailto:info@albatrozsolutions.com"
+                className="text-[14px] text-[#bbbbbb] transition-colors hover:text-[#ff403a]"
+              >
+                info@albatrozsolutions.com
+              </a>
+            </div>
+
+            <h3 className="mb-4 text-[16px] font-bold text-white">Follow on Us</h3>
+            <div className="flex items-center gap-4 text-[#e53935]">
+              <a href="#instagram" aria-label="Instagram" className="transition-opacity hover:opacity-75">
+                <InstagramIcon />
+              </a>
+              <a href="#facebook" aria-label="Facebook" className="transition-opacity hover:opacity-75">
+                <FacebookIcon />
+              </a>
+              <a href="#linkedin" aria-label="LinkedIn" className="transition-opacity hover:opacity-75">
+                <LinkedInIcon />
+              </a>
+              <a href="#x" aria-label="X" className="transition-opacity hover:opacity-75">
+                <XIcon />
+              </a>
             </div>
           </div>
-
         </div>
-      </div>
 
-      {/* Bottom Copyright Accent Strip */}
-      <div className="bg-[#ff3b30] text-white text-center py-3 text-xs md:text-sm font-medium tracking-wide">
-        ©2026 All right reserved. albatrozsolutions Limited
+        <div className="h-px w-full bg-[#333333]" />
+
+        {/* Policy links */}
+        <div className="mx-auto flex max-w-[1400px] flex-wrap items-center gap-3 px-6 py-4 md:px-12 lg:px-16">
+          <Link
+            href="/privacy-policy"
+            className="text-[13px] text-[#bbbbbb] transition-colors hover:text-[#ff403a]"
+          >
+            Privacy Policy
+          </Link>
+          <span className="text-[#555555]">|</span>
+          <Link
+            href="/privacy-policy"
+            className="text-[13px] text-[#bbbbbb] transition-colors hover:text-[#ff403a]"
+          >
+            Terms & Conditions
+          </Link>
+        </div>
+
+        <div className="h-px w-full bg-[#333333]" />
+
+        {/* Bottom copyright */}
+        <div className="mx-auto flex max-w-[1400px] flex-col items-start justify-between gap-3 px-6 py-4 sm:flex-row sm:items-center md:px-12 lg:px-16">
+          <span className="text-[13px] text-[#888888]">
+            © Copyright 2026 Albatroz (India) Private Limited. All Rights Reserved.
+          </span>
+          <span className="text-[13px] text-[#888888]">
+            Web Design by <strong className="font-bold text-white">Razobyte</strong>
+          </span>
+        </div>
       </div>
     </footer>
   );

@@ -1,216 +1,285 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ChevronDownIcon } from "lucide-react";
+
+const navLinks = [
+  { href: "/about", label: "About Us" },
+  { href: "/career", label: "Careers" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact-us", label: "Contact Us" },
+];
+
+const solutionLinks = [
+  { href: "/web-development", label: "Project & Portfolio Management" },
+  { href: "/app-development", label: "Enterprise IT Automation" },
+  { href: "/digital-marketing", label: "AI Services for Enterprise" },
+];
+
+function NavLink({ href, children, className = "" }) {
+  return (
+    <Link
+      href={href}
+      className={`relative group py-1 text-[17px] font-medium tracking-wide text-white/90 hover:text-white transition-colors duration-300 ${className}`}
+    >
+      {children}
+      <span className="absolute -bottom-0.5 left-0 h-[2px] w-0 bg-gradient-to-r from-[#ff403a] to-[#e52e2e] rounded-full transition-all duration-300 group-hover:w-full" />
+    </Link>
+  );
+}
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [showSolutions, setShowSolutions] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   return (
-    <div className="relative">
-      <nav className="fixed top-0 left-0 w-full flex items-center justify-between bg-black px-6 md:px-10 py-4 text-white min-h-[80px] z-[999]">
+    <header className="relative">
+      <nav
+        className={`fixed top-0 left-0 w-full z-[999] transition-all duration-500 ease-out ${
+          scrolled
+            ? "bg-black/85 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.45)] border-b border-white/[0.06]"
+            : "bg-black/70 backdrop-blur-md border-b border-transparent"
+        }`}
+      >
+        <div
+          className={`mx-auto flex max-w-[1400px] items-center justify-between px-5 md:px-10 transition-all duration-500 ${
+            scrolled ? "min-h-[68px] py-3" : "min-h-[80px] py-4"
+          }`}
+        >
+          {/* Logo */}
+          <Link
+            href="/"
+            className="group flex shrink-0 items-center gap-3 select-none"
+          >
+            <img
+              src="/images/nla.svg"
+              alt="Albatroz Solutions"
+              className={`transition-transform duration-300 group-hover:scale-[1.03] ${
+                scrolled ? "h-[36px] md:h-[44px]" : "h-[30px] md:h-[50px]"
+              }`}
+            />
+          </Link>
 
-        {/* Logo */}
-        <div className="flex items-center gap-3 select-none">
-          <img
-            src="/images/nla.svg"
-            alt="Logo"
-            className="h-[30px] md:h-[50px]"
-          />
-        </div>
-
-        {/* Mobile Toggle */}
-        <div className="md:hidden">
+          {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white p-2"
+            className="relative z-[1001] flex h-10 w-10 items-center justify-center rounded-lg text-white transition-colors hover:bg-white/10 md:hidden"
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
           >
-            {isOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-8 h-8"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-8 h-8"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 12h18M3 6h18M3 18h18"
-                />
-              </svg>
-            )}
+            <span className="sr-only">Menu</span>
+            <div className="flex w-6 flex-col items-end gap-[5px]">
+              <span
+                className={`block h-[2px] rounded-full bg-white transition-all duration-300 ${
+                  isOpen ? "w-6 translate-y-[7px] rotate-45" : "w-6"
+                }`}
+              />
+              <span
+                className={`block h-[2px] rounded-full bg-white transition-all duration-300 ${
+                  isOpen ? "w-0 opacity-0" : "w-4"
+                }`}
+              />
+              <span
+                className={`block h-[2px] rounded-full bg-white transition-all duration-300 ${
+                  isOpen ? "w-6 -translate-y-[7px] -rotate-45" : "w-5"
+                }`}
+              />
+            </div>
           </button>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex flex-1 items-center justify-center">
+            <ul className="flex items-center gap-1 lg:gap-2">
+              {/* Home */}
+              <li>
+                <Link
+                  href="/"
+                  className="group flex h-10 w-10 items-center justify-center rounded-lg text-[#e52e2e] transition-all duration-300 hover:bg-[#ff403a]/10 hover:text-[#ff403a]"
+                  aria-label="Home"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="h-5 w-5 transition-transform duration-300 group-hover:scale-110"
+                    fill="currentColor"
+                  >
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                  </svg>
+                </Link>
+              </li>
+
+              <li className="mx-1 h-4 w-px bg-white/10" />
+
+              {navLinks.slice(0, 1).map((link) => (
+                <li key={link.href} className="px-2 lg:px-3">
+                  <NavLink href={link.href}>{link.label}</NavLink>
+                </li>
+              ))}
+
+              {/* Solutions Dropdown */}
+              <li
+                className="relative px-2 lg:px-3"
+                onMouseEnter={() => setShowSolutions(true)}
+                onMouseLeave={() => setShowSolutions(false)}
+              >
+                <button
+                  type="button"
+                  className="group flex items-center gap-1.5 py-1 text-[17px] font-medium tracking-wide text-white/90 transition-colors duration-300 hover:text-white"
+                >
+                  Solutions
+                  <ChevronDownIcon
+                    size={15}
+                    strokeWidth={2.5}
+                    className={`transition-transform duration-300 ${
+                      showSolutions ? "rotate-180 text-[#ff403a]" : ""
+                    }`}
+                  />
+                  <span
+                    className={`absolute -bottom-0.5 left-2 lg:left-3 h-[2px] rounded-full bg-gradient-to-r from-[#ff403a] to-[#e52e2e] transition-all duration-300 ${
+                      showSolutions ? "w-[calc(100%-1rem)]" : "w-0"
+                    }`}
+                  />
+                </button>
+
+                <div
+                  className={`absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 transition-all duration-300 ${
+                    showSolutions
+                      ? "pointer-events-auto translate-y-0 opacity-100"
+                      : "pointer-events-none -translate-y-2 opacity-0"
+                  }`}
+                >
+                  <div className="w-72 overflow-hidden rounded-xl border border-white/10 bg-black/95 shadow-[0_20px_50px_rgba(0,0,0,0.6)] backdrop-blur-xl">
+                    <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#ff403a] to-transparent" />
+                    <ul className="py-2">
+                      {solutionLinks.map((item) => (
+                        <li key={item.href}>
+                          <Link
+                            href={item.href}
+                            className="group flex items-center gap-3 px-5 py-3.5 text-[15px] font-medium text-white/80 transition-all duration-200 hover:bg-[#ff403a]/10 hover:text-white"
+                          >
+                            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#ff403a]/40 transition-all duration-200 group-hover:bg-[#ff403a] group-hover:shadow-[0_0_8px_#ff403a]" />
+                            {item.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+              {navLinks.slice(1).map((link) => (
+                <li key={link.href} className="px-2 lg:px-3">
+                  <NavLink href={link.href}>{link.label}</NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Desktop CTA */}
+          <div className="hidden md:block shrink-0">
+            <Link
+              href="/contact-us"
+              className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white px-7 py-2.5 text-[17px] font-bold tracking-wide text-[#c41e1e] shadow-[0_4px_20px_rgba(255,255,255,0.12)] transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_8px_30px_rgba(255,64,58,0.25)] active:scale-[0.98]"
+            >
+              <span className="absolute inset-0 bg-gradient-to-r from-white via-neutral-50 to-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <span className="relative">Book A Call</span>
+            </Link>
+          </div>
         </div>
 
-        {/* Navigation */}
-        <ul
-          className={`
-            flex flex-col md:flex-row items-center gap-6 md:gap-8
-            text-[18px] font-medium text-white
-            absolute md:static top-[80px] left-0 w-full md:w-auto
-            bg-black md:bg-transparent
-            px-6 py-6 md:p-0
-            overflow-visible
-            transition-all duration-300 ease-in-out
-            ${
-              isOpen
-                ? "opacity-100 visible"
-                : "opacity-0 invisible md:opacity-100 md:visible"
-            }
-          `}
+        {/* Mobile Menu Overlay */}
+        <div
+          className={`fixed inset-0 top-[80px] z-[998] bg-black/60 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
+            isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
+          onClick={() => setIsOpen(false)}
+        />
+
+        {/* Mobile Navigation */}
+        <div
+          className={`absolute left-0 top-full z-[1000] w-full overflow-hidden border-b border-white/10 bg-black/95 backdrop-blur-xl transition-all duration-400 ease-out md:hidden ${
+            isOpen ? "max-h-[85vh] opacity-100" : "max-h-0 opacity-0"
+          }`}
         >
-          {/* Home */}
-          <li>
-            <Link
-              href="/"
-              className="text-[#e52e2e] hover:text-white transition-colors duration-200"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                className="w-8 h-8 md:w-10 md:h-10"
-                fill="currentColor"
+          <ul className="flex flex-col gap-1 px-5 py-6">
+            <li>
+              <Link
+                href="/"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center gap-3 rounded-xl px-4 py-3 text-[#ff403a] transition-colors hover:bg-white/5"
               >
-                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-              </svg>
-            </Link>
-          </li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  className="h-5 w-5"
+                  fill="currentColor"
+                >
+                  <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                </svg>
+                <span className="text-[17px] font-medium text-white">Home</span>
+              </Link>
+            </li>
 
-          {/* About */}
-          <li>
-            <Link
-              href="/about"
-              className="hover:text-[#ff403a] transition-colors duration-200"
-            >
-              About Us
-            </Link>
-          </li>
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block rounded-xl px-4 py-3 text-[17px] font-medium text-white/90 transition-colors hover:bg-white/5 hover:text-white"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
 
-          {/* Solutions Dropdown */}
-        {/* Solutions Dropdown */}
-<li
-  className="relative"
-  onMouseEnter={() => setShowSolutions(true)}
-  onMouseLeave={() => setShowSolutions(false)}
->
-  <button
-    type="button"
-    className="flex items-center gap-1 hover:text-[#ff403a] transition-colors duration-200 cursor-pointer"
-  >
-    Solutions
+            <li>
+              <p className="px-4 pt-3 pb-1 text-xs font-semibold uppercase tracking-widest text-white/40">
+                Solutions
+              </p>
+              <ul className="flex flex-col gap-0.5">
+                {solutionLinks.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="block rounded-xl px-4 py-2.5 pl-7 text-[15px] font-medium text-[#ff403a]/90 transition-colors hover:bg-[#ff403a]/10 hover:text-[#ff403a]"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </li>
 
-    <ChevronDownIcon
-      size={16}
-      className={`transition-transform duration-300 ${
-        showSolutions ? "rotate-180" : ""
-      }`}
-    />
-  </button>
-
-  {showSolutions && (
-    <ul className="absolute top-full left-0 mt-0 w-72 bg-black border border-[#ff403a] rounded-lg shadow-xl overflow-hidden z-[9999]">
-      <li>
-        <Link
-          href="/web-development"
-          className="block px-4 py-3 bg-black text-[#ff403a] hover:text-white transition-all duration-300"
-        >
-          Project & Portfolio Management
-        </Link>
-      </li>
-
-      <li>
-        <Link
-          href="/app-development"
-          className="block px-4 py-3 bg-black text-[#ff403a] hover:text-white transition-all duration-300"
-        >
-          Enterprise IT Automation
-        </Link>
-      </li>
-
-      <li>
-        <Link
-          href="/digital-marketing"
-          className="block px-4 py-3 bg-black text-[#ff403a] hover:text-white transition-all duration-300"
-        >
-          AI Services for Enterprise
-        </Link>
-      </li>
-    </ul>
-  )}
-      </li>
-
-          {/* Careers */}
-          <li>
-            <Link
-              href="/career"
-              className="hover:text-[#ff403a] transition-colors duration-200"
-            >
-              Careers
-            </Link>
-          </li>
-
-          {/* Blog */}
-          <li>
-            <Link
-              href="/blog"
-              className="hover:text-[#ff403a] transition-colors duration-200"
-            >
-              Blog
-            </Link>
-          </li>
-
-          {/* Contact */}
-          <li>
-            <Link
-              href="/contact-us"
-              className="hover:text-[#ff403a] transition-colors duration-200"
-            >
-              Contact Us
-            </Link>
-          </li>
-
-          {/* Mobile CTA */}
-          <li className="md:hidden mt-2 w-full text-center">
-            <Link
-              href="/contact-us"
-              className="inline-block w-full bg-white text-[#e52e2e] font-bold text-[18px] px-6 py-2.5 rounded-lg"
-            >
-              Book A Call
-            </Link>
-          </li>
-        </ul>
-
-        {/* Desktop CTA */}
-        <div className="hidden md:block">
-          <Link
-            href="/contact-us"
-            className="inline-block bg-white text-[#e52e2e] font-bold text-[20px] px-6 py-2.5 rounded-lg shadow-sm hover:bg-gray-100 transition-all duration-200"
-          >
-            Book A Call
-          </Link>
+            <li className="mt-4 px-2">
+              <Link
+                href="/contact-us"
+                onClick={() => setIsOpen(false)}
+                className="flex w-full items-center justify-center rounded-full bg-white py-3.5 text-[17px] font-bold text-[#c41e1e] shadow-lg transition-transform active:scale-[0.98]"
+              >
+                Book A Call
+              </Link>
+            </li>
+          </ul>
         </div>
       </nav>
-    </div>
+    </header>
   );
 }
 

@@ -6,7 +6,7 @@ import Footer from "../component/Footer/Footer"
 import Abovefooter from "../section/Home/Abovefooter"
 import { useEffect, useState, useRef } from "react";
 import BannerSlider from "../component/banner/Banner"
-
+import PlatformShowcase from "../section/Home/PlatformShowcase"
 
 // const stats = [
 //   {
@@ -26,15 +26,6 @@ import BannerSlider from "../component/banner/Banner"
 //     title: "Years in Business",
 //   },
 // ];
-
-  const logos = [
-    "/images/clarity.svg",
-    "/images/rally.svg",
-    "/images/stb.svg",
-    "/images/ca.svg",
-  ];
-
-
 
 export default function Home() {
   const sectionRef = useRef(null);
@@ -171,51 +162,7 @@ Get my AI readiness report
 
       </div>
     </section> */}
-    <section className="relative overflow-hidden bg-[#111] py-10 md:py-20">
-      {/* Red Stripes */}
-      <div
-        className="absolute inset-0 opacity-25 bg-black"
-      />
-
-      <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
-        <h2 className="text-3xl md:text-[40px] font-semibold text-[#FFFFFF]">
-          Plan Smarter. Deliver Faster.
-          <span className="text-[#FF403A]"> Automate Everything.</span>
-        </h2>
-
-        <p className="mx-auto mt-4 max-w-3xl text-[16px] md:text-[20px] text-[#FFFFFF]">
-          Industry-leading platforms that bring strategy, delivery, and
-          automation together enabling your teams to move faster with complete
-          visibility.
-        </p>
-
-        <div className="mt-5 overflow-hidden md:hidden">
-  <div className="flex w-max animate-marquee">
-    {[...logos, ...logos].map((logo, index) => (
-      <div key={index} className="mx-8 shrink-0">
-        <img
-          src={logo}
-          alt="Company Logo"
-          className="h-10 w-auto object-contain"
-        />
-      </div>
-    ))}
-  </div>
-</div>
-
-{/* Desktop */}
-<div className="hidden md:flex items-center justify-center gap-20 mt-7">
-  {logos.map((logo, index) => (
-    <img
-      key={index}
-      src={logo}
-      alt="Company Logo"
-      className="h-16 w-auto object-contain"
-    />
-  ))}
-</div>
-      </div>
-    </section>
+    <PlatformShowcase />
 {/* <section className="bg-[#000000] py-16 px-6">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
 
